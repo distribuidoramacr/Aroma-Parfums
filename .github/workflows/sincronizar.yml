@@ -1,0 +1,30 @@
+name: Sincronizar Catalogo La Fe
+
+on:
+  schedule:
+    - cron: '0 12 * * 1'
+  workflow_dispatch:
+    inputs:
+      accion:
+        description: 'Accion (escanear o aplicar)'
+        required: true
+        default: 'escanear'
+
+permissions:
+  contents: write
+
+jobs:
+  sincronizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python motor_sincronizacion.py "${{ github.event.inputs.accion || 'escanear' }}"
+      - run: |
+          git config user.name "Robot Aroma Parfums"
+          git config user.email "bot@aromaparfums.hn"
+          git add datos.js pendientes.json
+          git commit -m "Actualizacion desde Panel 0312" || exit 0
+          git push
