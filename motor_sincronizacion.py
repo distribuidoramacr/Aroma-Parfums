@@ -1,7 +1,30 @@
-import os, sys, json, re, math, time
-from urllib.request import urlopen, Request
-import time
-import sys
+import os,sys,json,re,math,time
+from urllib.request import urlopen,Request
+def m5a(v):return int(math.ceil(v/5.0)*5)
+def m5c(v):return int(round(v/5.0)*5)
+def relleno(tit,tip,tag):
+ t=(tit+' '+tip+' '+tag).upper()
+ bad=('1.5ML','5ML','10ML','15ML','20ML','VIAL','DECANT','MINI','DE ACEITE','ROLL ON','NEW BRAND','NICKELODEON','AIR VAL','DISNEY','MARVEL','BARBIE','SPLASH','BODY MIST','CREMA','DESODORANTE','REPLICA')
+ if any(b in t for b in bad):return True
+ m=re.search(r'(\d+(?:\.\d+)?)\s*ML',t)
+ return bool(m and float(m.group(1))<=20.0)
+def norm(n):
+ x=re.sub(r'[^A-Z0-9\s]',' ',n.upper())
+ return re.sub(r'\s+',' ',x).strip()
+def lafe():
+ out,pg,s=list(),1,chr(47)
+ b='https:'+s+s+'tienda'+'lafe.com'+s
+ u=b+'products.json?limit=250&page='
+ h={'User-Agent':'Mozilla/5.0','Accept':'application/json'}
+ while pg<=35:
+  try:
+   r=urlopen(Request(u+str(pg),headers=h),timeout=12)
+   d=json.loads(r.read().decode('utf-8'))
+  except Exception:break
+  lt=d.get('products',list())
+  if not lt:break
+  out.extend(lt);pg+=1;time.sleep(0.4)
+ return out
 def linea_c(v,t):
  x=(v+' '+t).upper()
  ar=('LATTAFA','ARMAF','AFNAN','AL HARAMAIN','RASASI','SWISS ARABIAN','ORIENTICA','MAISON ALHAMBRA','FRAGRANCE WORLD','PARIS CORNER','GULF ORCHID','REYANE TRADITION','ARD AL ZAAFARAN','ZIMAYA','KAAF','BHARARA','DUMONT','KHADLAJ')
