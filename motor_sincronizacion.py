@@ -4,10 +4,13 @@ def m5a(v):return int(math.ceil(v/5.0)*5)
 def m5c(v):return int(round(v/5.0)*5)
 def relleno(tit,tip,tag):
  t=(tit+' '+tip+' '+tag).upper()
- bad=('1.5ML','5ML','10ML','15ML','20ML','VIAL','DECANT','MINI','DE ACEITE','ROLL ON','NEW BRAND','NICKELODEON','AIR VAL','DISNEY','MARVEL','BARBIE','SPLASH','BODY MIST','CREMA','DESODORANTE','REPLICA')
+ bad=('AAA','ECONOMICO','ECONÓMICO','REPLICA','RÉPLICA','IMITACION','GENERICO','1.5ML','2ML','3ML','5ML','7.5ML','8ML','10ML','12ML','15ML','20ML','25ML','VIAL','DECANT','DECAN','MINI','MUESTRA','SAMPLE','DE ACEITE','ROLL ON','ROLL-ON','NEW BRAND','NICKELODEON','AIR VAL','DISNEY','MARVEL','BARBIE','ZARA','CYZONE','ESIKA','LBEL','YANBAL','NATURA','AVON','FULLER','JAFRA','MARY KAY','VICTORIA SECRET','BATH & BODY','SPLASH','BODY MIST','MIST','CREMA','CREAM','DESODORANTE','DEODORANT','SABANA','CORTINA','ALMOHADA','EDREDON','TOALLA','COJIN','MANTA','FUNDA','COLCHA','HOME','BENELI','RELOJ','LENTES','GAFAS','MOCHILA','CARTERA','BOLSO','BILLETERA','ZAPATO','TENIS','ROPA','CAMISA','PANTALON','ALFOMBRA','TAPETE','VELA','DIFUSOR','AMBIENTADOR','JABON','SHAMPOO')
  if any(b in t for b in bad):return True
  m=re.search(r'(\d+(?:\.\d+)?)\s*ML',t)
- return bool(m and float(m.group(1))<=20.0)
+ if m:
+  return float(m.group(1))<30.0
+ perf=('EDP','EDT','PARFUM','COLOGNE','PERFUME','FRAGANCIA','ELIXIR','EXTRAIT','TESTER','ESTUCHE','SET ')
+ return not any(p in t for p in perf)
 def norm(n):
  x=re.sub(r'[^A-Z0-9\s]',' ',n.upper())
  return re.sub(r'\s+',' ',x).strip()
@@ -44,6 +47,14 @@ def main():
  modo=sys.argv.pop(1) if len(sys.argv)>1 else 'escanear'
  a,d=open('datos.js',encoding='utf-8').read().split('=',1)
  items=json.loads(d.strip().rstrip(';'))
+ if modo=='descartar':
+  if not(os.path.exists('aprobados.json') and os.path.exists('pendientes.json')):return
+  apr=json.load(open('aprobados.json',encoding='utf-8'))
+  pend=json.load(open('pendientes.json',encoding='utf-8'))
+  sids=set(str(x) for x in apr.get('ids',list()))
+  pend.update({'cambios':list(c for c in pend.get('cambios',list()) if str(c.get('id','')) not in sids)})
+  json.dump(pend,open('pendientes.json','w',encoding='utf-8'),ensure_ascii=False,indent=2)
+  return
  if modo=='aplicar':
   if not(os.path.exists('aprobados.json') and os.path.exists('pendientes.json')):return
   apr=json.load(open('aprobados.json',encoding='utf-8'))
@@ -102,8 +113,11 @@ def main():
      ps,ss,ms=calc(kn,lin,it.get('c',''),lv.get('p_lafe',0))
      cmb.append({'id':iid,'tipo':'BAJO','n':it.get('n',''),'c':it.get('c',''),'l':lin,'i':it.get('i',''),'k_ant':ka,'k_nuevo':kn,'diff':df,'p_ant':pa,'p_sug':ps,'s_sug':ss,'m_sug':ms})
  ix=1
+ casas_ok=set(norm(i.get('c','')) for i in items if i.get('c'))
  for cl,lv in vivo.items():
   if cl in ex or lv.get('a')==1:continue
+  lin=linea_c(lv.get('c',''),lv.get('n',''))
+  if norm(lv.get('c','')) not in casas_ok and lin=='DISENADOR':continue
   lin=linea_c(lv.get('c',''),lv.get('n',''));ps,ss,ms=calc(lv.get('k',0),lin,lv.get('c',''),lv.get('p_lafe',0))
   cmb.append({'id':'NEW_'+str(ix),'tipo':'NUEVO','n':lv.get('n',''),'c':lv.get('c',''),'l':lin,'i':lv.get('i',''),'k_nuevo':lv.get('k',0),'p_lafe':lv.get('p_lafe',0),'p_sug':ps,'s_sug':ss,'m_sug':ms});ix+=1
  json.dump({'fecha':os.popen('date -u +%Y-%m-%dT%H:%M:%SZ').read().strip(),'cambios':cmb},open('pendientes.json','w',encoding='utf-8'),ensure_ascii=False,indent=2)
