@@ -4,11 +4,11 @@ def m5a(v):return int(math.ceil(v/5.0)*5)
 def m5c(v):return int(round(v/5.0)*5)
 def relleno(tit,tip,tag):
  t=(tit+' '+tip+' '+tag).upper()
- bad=('AAA','ECONOMICO','ECONÓMICO','REPLICA','RÉPLICA','IMITACION','GENERICO','1.5ML','2ML','3ML','5ML','7.5ML','8ML','10ML','12ML','15ML','20ML','25ML','VIAL','DECANT','DECAN','MINI','MUESTRA','SAMPLE','DE ACEITE','ROLL ON','ROLL-ON','NEW BRAND','NICKELODEON','AIR VAL','DISNEY','MARVEL','BARBIE','ZARA','CYZONE','ESIKA','LBEL','YANBAL','NATURA','AVON','FULLER','JAFRA','MARY KAY','VICTORIA SECRET','BATH & BODY','SPLASH','BODY MIST','MIST','CREMA','CREAM','DESODORANTE','DEODORANT','SABANA','CORTINA','ALMOHADA','EDREDON','TOALLA','COJIN','MANTA','FUNDA','COLCHA','HOME','BENELI','RELOJ','LENTES','GAFAS','MOCHILA','CARTERA','BOLSO','BILLETERA','ZAPATO','TENIS','ROPA','CAMISA','PANTALON','ALFOMBRA','TAPETE','VELA','DIFUSOR','AMBIENTADOR','JABON','SHAMPOO')
+ bad=('AAA','ECONOMICO','ECONÓMICO','REPLICA','RÉPLICA','IMITACION','GENERICO','AROMA SIMILAR','SIMILAR A','MYSTICAL','LOVALI','PINK IN SWEET','SOLETHIA','BURPHRISE','6AM REBEL','1.5ML','2ML','3ML','5ML','7.5ML','8ML','10ML','12ML','15ML','20ML','25ML','30ML','MLX','3X50','2X50','X2PCS','X3PCS','X4PCS','X5PCS','250ML','170G','VIAL','DECANT','DECAN','MINI','MUESTRA','SAMPLE','DE ACEITE','ROLL ON','ROLL-ON','NEW BRAND','NICKELODEON','AIR VAL','DISNEY','MARVEL','BARBIE','ZARA','CYZONE','ESIKA','LBEL','YANBAL','NATURA','AVON','FULLER','JAFRA','MARY KAY','VICTORIA SECRET','BATH & BODY','SPLASH','BODY MIST','MIST','SPRAY CORPORAL','BODY SPRAY','CREMA','CREAM','DESODORANTE','DEODORANT','TRATAMIENTO','CAPILAR','ACONDICIONADOR','ENJUAGUE','SHAMPOO','JABON','PARA NIÑAS','PARA NINOS','SABANA','CORTINA','ALMOHADA','EDREDON','TOALLA','COJIN','MANTA','FUNDA','COLCHA','HOME','BENELI','RELOJ','LENTES','GAFAS','MOCHILA','CARTERA','BOLSO','BILLETERA','ZAPATO','TENIS','ROPA','CAMISA','PANTALON','ALFOMBRA','TAPETE','VELA','DIFUSOR','AMBIENTADOR')
  if any(b in t for b in bad):return True
  m=re.search(r'(\d+(?:\.\d+)?)\s*ML',t)
  if m:
-  return float(m.group(1))<30.0
+  return float(m.group(1))<=30.0
  perf=('EDP','EDT','PARFUM','COLOGNE','PERFUME','FRAGANCIA','ELIXIR','EXTRAIT','TESTER','ESTUCHE','SET ')
  return not any(p in t for p in perf)
 def norm(n):
@@ -29,7 +29,7 @@ def lafe():
   out.extend(lt);pg+=1;time.sleep(0.4)
  return out
 def linea_c(v,t):
- x=(v+' '+t).upper()
+ x=v.upper()
  ar=('LATTAFA','ARMAF','AFNAN','AL HARAMAIN','RASASI','SWISS ARABIAN','ORIENTICA','MAISON ALHAMBRA','FRAGRANCE WORLD','PARIS CORNER','GULF ORCHID','REYANE TRADITION','ARD AL ZAAFARAN','ZIMAYA','KAAF','BHARARA','DUMONT','KHADLAJ')
  if any(a in x for a in ar):return 'ARABE'
  ni=('CREED','PARFUMS DE MARLY','MANCERA','MONTALE','XERJOFF','NISHANE','BYREDO','LE LABO','MAISON FRANCIS KURKDJIAN','TOM FORD','AMOUAGE','INITIO','TIZIANA TERENZI','KILIAN','ROJA','BOND NO 9','MEMO PARIS','SOSPIRO')
@@ -112,13 +112,13 @@ def main():
     else:
      ps,ss,ms=calc(kn,lin,it.get('c',''),lv.get('p_lafe',0))
      cmb.append({'id':iid,'tipo':'BAJO','n':it.get('n',''),'c':it.get('c',''),'l':lin,'i':it.get('i',''),'k_ant':ka,'k_nuevo':kn,'diff':df,'p_ant':pa,'p_sug':ps,'s_sug':ss,'m_sug':ms})
- ix=1
  casas_ok=set(norm(i.get('c','')) for i in items if i.get('c'))
+ ix=1
  for cl,lv in vivo.items():
   if cl in ex or lv.get('a')==1:continue
   lin=linea_c(lv.get('c',''),lv.get('n',''))
   if norm(lv.get('c','')) not in casas_ok and lin=='DISENADOR':continue
-  lin=linea_c(lv.get('c',''),lv.get('n',''));ps,ss,ms=calc(lv.get('k',0),lin,lv.get('c',''),lv.get('p_lafe',0))
+  ps,ss,ms=calc(lv.get('k',0),lin,lv.get('c',''),lv.get('p_lafe',0))
   cmb.append({'id':'NEW_'+str(ix),'tipo':'NUEVO','n':lv.get('n',''),'c':lv.get('c',''),'l':lin,'i':lv.get('i',''),'k_nuevo':lv.get('k',0),'p_lafe':lv.get('p_lafe',0),'p_sug':ps,'s_sug':ss,'m_sug':ms});ix+=1
  json.dump({'fecha':os.popen('date -u +%Y-%m-%dT%H:%M:%SZ').read().strip(),'cambios':cmb},open('pendientes.json','w',encoding='utf-8'),ensure_ascii=False,indent=2)
 if __name__=='__main__':main()
