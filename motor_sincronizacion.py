@@ -74,8 +74,9 @@ def main():
     if tp=='DISP':it.update({'a':int(c.get('a_nuevo',0))})
     elif tp in('SUBIO','BAJO','OFERTA'):
      kf=int(c.get('k_nuevo',it.get('k',0)));pf=int(ped.get(cid,c.get('p_sug',it.get('p',0))));sf=m5a(kf+((pf-kf)*0.5));mf=int(c.get('m_sug',it.get('m',0)))
-     it.update({'k':kf,'p':pf,'s':sf,'m':mf,'av':0})
-     if tp=='OFERTA':it.update({'o':1,'d':max(0,int(c.get('p_ant',pf))-pf),'ds':max(0,int(c.get('s_ant',sf))-sf),'dm':max(0,int(c.get('m_ant',mf))-mf),'df':int(c.get('rebaja_lafe',0))})
+     pa_v=int(c.get('p_ant',it.get('p',pf)));sv_v=pf-pa_v
+     it.update({'k':kf,'p':pf,'s':sf,'m':mf,'sv':sv_v,'o':1 if sv_v<0 else 0,'w':0})
+     if sv_v<0:it.update({'d':abs(sv_v),'ds':max(0,int(c.get('s_ant',sf))-sf),'dm':max(0,int(c.get('m_ant',mf))-mf),'df':abs(int(c.get('diff',0)))})
   open('datos.js','w',encoding='utf-8').write(a+'='+json.dumps(items,ensure_ascii=False,separators=(',',':'))+';\n')
   pend.update({'cambios':list(c for c in pend.get('cambios',list()) if str(c.get('id','')) not in sids)})
   json.dump(pend,open('pendientes.json','w',encoding='utf-8'),ensure_ascii=False,indent=2)
@@ -104,14 +105,11 @@ def main():
    if df>=20:
     ps,ss,ms=calc(kn,lin,it.get('c',''),lv.get('p_lafe',0))
     cmb.append({'id':iid,'tipo':'SUBIO','n':it.get('n',''),'c':it.get('c',''),'l':lin,'i':it.get('i',''),'k_ant':ka,'k_nuevo':kn,'diff':df,'p_ant':it.get('p',0),'p_sug':ps,'s_sug':ss,'m_sug':ms})
-   elif df<=-20:
+   elif df<=-100:
     pa,rb=int(it.get('p',0)),abs(df);pof=150 if pa>=1600 else 100
-    if lv.get('oferta') and rb>=pof:
-     d50=m5c(rb*0.5)
-     cmb.append({'id':iid,'tipo':'OFERTA','n':it.get('n',''),'c':it.get('c',''),'l':lin,'i':it.get('i',''),'k_ant':ka,'k_nuevo':kn,'diff':df,'rebaja_lafe':rb,'p_ant':pa,'s_ant':it.get('s',0),'m_ant':it.get('m',0),'p_sug':max(kn+100,pa-d50),'s_sug':max(kn+50,int(it.get('s',0))-d50),'m_sug':max(kn+25,int(it.get('m',0))-d50)})
-    else:
-     ps,ss,ms=calc(kn,lin,it.get('c',''),lv.get('p_lafe',0))
-     cmb.append({'id':iid,'tipo':'BAJO','n':it.get('n',''),'c':it.get('c',''),'l':lin,'i':it.get('i',''),'k_ant':ka,'k_nuevo':kn,'diff':df,'p_ant':pa,'p_sug':ps,'s_sug':ss,'m_sug':ms})
+    if rb<pof:continue
+    d50=m5c(rb*0.5)
+    cmb.append({'id':iid,'tipo':'OFERTA','n':it.get('n',''),'c':it.get('c',''),'l':lin,'i':it.get('i',''),'k_ant':ka,'k_nuevo':kn,'diff':df,'rebaja_lafe':rb,'p_ant':pa,'s_ant':it.get('s',0),'m_ant':it.get('m',0),'p_sug':max(kn+100,pa-d50),'s_sug':max(kn+50,int(it.get('s',0))-d50),'m_sug':max(kn+25,int(it.get('m',0))-d50)})
  casas_ok=set(norm(i.get('c','')) for i in items if i.get('c'))
  ix=1
  for cl,lv in vivo.items():
