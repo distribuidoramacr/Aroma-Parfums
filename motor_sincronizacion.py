@@ -119,4 +119,27 @@ def main():
   ps,ss,ms=calc(lv.get('k',0),lin,lv.get('c',''),lv.get('p_lafe',0))
   cmb.append({'id':'NEW_'+str(ix),'tipo':'NUEVO','n':lv.get('n',''),'c':lv.get('c',''),'l':lin,'i':lv.get('i',''),'k_nuevo':lv.get('k',0),'p_lafe':lv.get('p_lafe',0),'p_sug':ps,'s_sug':ss,'m_sug':ms});ix+=1
  json.dump({'fecha':os.popen('date -u +%Y-%m-%dT%H:%M:%SZ').read().strip(),'cambios':cmb},open('pendientes.json','w',encoding='utf-8'),ensure_ascii=False,indent=2)
+
+def _opt_imagenes_webp():
+    import re as _re, os as _os
+    def _u(m):
+        u = _re.sub(r'([?&])width=\d+', r'\1width=800', m.group(0))
+        if 'width=' not in u: u += ('&' if '?' in u else '?') + 'width=800'
+        if 'format=' not in u: u += '&format=webp'
+        return u
+    pat = r'https://[^"\'\s]+/cdn/shop/[^"\'\s]+'
+    for fn in ("datos.js", "lafe_vivo.json", "aprobados.json", "pendientes.json"):
+        if _os.path.exists(fn):
+            t = open(fn, "r", encoding="utf-8").read()
+            nt, n = _re.subn(pat, _u, t)
+            if n > 0 and nt != t:
+                open(fn, "w", encoding="utf-8").write(nt)
+
+if "main" in globals() and callable(main):
+    _orig_main = main
+    def main(*a, **kw):
+        res = _orig_main(*a, **kw)
+        _opt_imagenes_webp()
+        return res
+
 if __name__=='__main__':main()
