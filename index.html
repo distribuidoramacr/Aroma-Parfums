@@ -465,15 +465,14 @@ window._calcVipCliente=function(wa8,mesOpt){
   var mot=bono?(bCum>=bCiclo&&esCum?'Bono Cumpleanos VIP (L 150)':'Bono Ciclo Fragancia #'+nxt+' (L '+bCiclo+')'):'';
   return{bono:bono,motivo:mot,ciclo:nxt,tot:tot,esCum:esCum};
 };
-window._updVipCartUI=function(){
+window.updVipCartUI=function(){
 var box=document.getElementById('vipCartAviso'),card=document.getElementById('vipCumpleCard'),sel=document.getElementById('cliCumpleMes'),cmsg=document.getElementById('vipCumpleMsg'),grid=document.getElementById('vipBeneficiosGrid');
 if(!box)return;
 if(typeof currentRole!=='undefined'&&currentRole!=='DETALLE'){if(grid)grid.style.display='none';box.style.display='none';return;}
 if(grid)grid.style.display='grid';
-var elWa=document.getElementById('cliWaOpcional');
-var elNom=document.getElementById('cliNombreOpcional');
-var wa=(elWa?elWa.value:'').replace(/\D/g,'');
-var nom=(elNom?elNom.value:'').trim();
+var wa='',nom='';
+document.querySelectorAll('#cliWaOpcional').forEach(function(el){if(el.value&&el.value.trim())wa=el.value.replace(/\D/g,'');});
+document.querySelectorAll('#cliNombreOpcional').forEach(function(el){if(el.value&&el.value.trim())nom=el.value.trim();});
 var tieneTel=(wa.length===8);
 var tieneNom=(nom.length>=2);
 
@@ -498,7 +497,7 @@ if(tieneTel && tieneNom){
   if(card){card.style.opacity='0.65';card.style.filter='grayscale(0.3)';}
   if(cmsg){cmsg.innerHTML='🔒 Ingresa tu <b>teléfono</b> y <b>nombre</b> arriba para desbloquear tu Bono L 150 VIP.';}
 }
-};
+};window._updVipCartUI=window.updVipCartUI;window._updVipCartUI=window.updVipCartUI;window._updVipCartUI=window.updVipCartUI;
 function renderAdmClientes(body){
   var clis=Object.values(JSON.parse(localStorage.getItem('ap_clientes_v1')||'{}'));
   var mAct=new Date().getMonth()+1,q=(window._filCliDir||'').toLowerCase().trim(),tb=window._fCliTab||'TODOS';
