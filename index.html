@@ -478,9 +478,7 @@ var clis={};try{clis=JSON.parse(localStorage.getItem('ap_clientes_v1')||'{}');}c
 var reg=tieneTel?(clis['504'+wa]||null):null;
 var mesesNom=['','Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 
-if(reg && reg.nombre && reg.nombre!=='Cliente Directo'){
-  if(elNom && !nom){elNom.value=reg.nombre;nom=reg.nombre;}
-}
+if(reg && reg.nombre && reg.nombre!=='Cliente Directo'){if(elNom){elNom.value=reg.nombre;nom=reg.nombre;elNom.disabled=true;elNom.style.background='#f1f5f9';elNom.style.cursor='not-allowed';}}else if(elNom){if(elNom.disabled){elNom.value='';nom='';}elNom.disabled=false;elNom.removeAttribute('disabled');elNom.style.background='#fff';elNom.style.cursor='text';}
 var tieneNom=(nom.length>=2);
 
 box.style.display='block';
