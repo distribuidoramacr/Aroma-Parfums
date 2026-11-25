@@ -57,7 +57,7 @@
 51. BLINDAJE DE CONTINUIDAD EN VIVO: Cada ejecucion sobrescribe
 
 === PUNTO EXACTO DE CONTINUIDAD ===
-FECHA_HONDURAS: 2026-11-25 10:55 CST | TURNO: 4/8
-ARCHIVO_ACTUAL: motor_sincronizacion.py + lafe_vivo.json
-ESTADO_EXACTO: Inspeccionando llave normalizada de 9AM DIVE 150ML en lafe_vivo.json vs datos.js.
-SIGUIENTE_PASO_UNICO: Afinar match por marca+modelo+ML en motor_sincronizacion.py si difiere texto entre parentesis.
+FECHA_HONDURAS: 2026-11-25 10:56 CST | TURNO: 5/8
+ARCHIVO_ACTUAL: lafe_vivo.json + motor_sincronizacion.py
+ESTADO_EXACTO: Leyendo llaves exactas de 9AM DIVE en lafe_vivo.json (dict interno).
+SIGUIENTE_PASO_UNICO: Aplicar ajuste exacto de match en motor_sincronizacion.py.
