@@ -104,9 +104,9 @@ def main():
  cmb,ex=list(),set()
  for it in items:
   cl=norm(it.get('n',''));ex.add(cl)
-  cl_b=re.sub(r'\s*\(DUPE[^)]*\)\s*$','',cl)
+  cl_b=re.sub(r'\s*\(?DUPE.*$','',cl)
   if cl not in vivo:
-   cl=next((k for k in vivo if re.sub(r'\s*\(DUPE[^)]*\)\s*$','',k)==cl_b),'')
+   cl=next((k for k in vivo if re.sub(r'\s*\(?DUPE.*$','',k)==cl_b),'')
   if not cl:continue
   lv=vivo.get(cl);iid,ka,kn=str(it.get('id','')),int(it.get('k',0)),int(lv.get('k',0));lin=it.get('l',linea_c(it.get('c',''),it.get('n','')))
   if int(it.get('a',0))!=int(lv.get('a',0)):cmb.append({'id':iid,'tipo':'DISP','n':it.get('n',''),'c':it.get('c',''),'l':lin,'i':it.get('i',''),'a_nuevo':int(lv.get('a',0)),'detalle':'Agotado en La Fe' if lv.get('a')==1 else 'Disponible de nuevo'})

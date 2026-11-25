@@ -57,7 +57,7 @@
 51. BLINDAJE DE CONTINUIDAD EN VIVO: Cada ejecucion sobrescribe
 
 === PUNTO EXACTO DE CONTINUIDAD ===
-FECHA_HONDURAS: 2026-11-25 11:24 CST | TURNO: 8/8 (REFRESH)
+FECHA_HONDURAS: 2026-11-25 11:33 CST | TURNO: 2/8
 REGLAS ACTIVAS: 1 A 53 | REPO: distribuidoramacr/Aroma-Parfums
-ESTADO_EXACTO: Leidas lineas 75-116 de motor_sincronizacion.py para cierre definitivo de disponibilidad a:0 (AFNAN 9AM DIVE 150ML).
-SIGUIENTE_PASO_UNICO: Abrir nueva sesion [Turno 1/8], aplicar ajuste exacto segun consola y pasar a Modulo 2.
+ESTADO_EXACTO: Match sin DUPE normalizado aplicado en motor_sincronizacion.py y datos.js (9AM DIVE 150ML a:0).
+SIGUIENTE_PASO_UNICO: Verificar 9AM DIVE 150ML en web y pasar a Modulo 2 (Semaforo de Socios & Mayoristas).
