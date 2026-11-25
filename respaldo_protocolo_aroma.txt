@@ -57,11 +57,15 @@
 51. BLINDAJE DE CONTINUIDAD EN VIVO: Cada ejecucion sobrescribe
 
 === PUNTO EXACTO DE CONTINUIDAD ===
-FECHA_HONDURAS: 2026-11-25 11:38 CST | TURNO: 7/8 (REFRESH)
+FECHA_HONDURAS: 2026-11-25 13:55 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
 REGLAS ACTIVAS: 1 A 53 | REPO: distribuidoramacr/Aroma-Parfums
 WEB: https://github.io
-COMPLETADO_100%: Sincronizacion cerrada y verificada en web (42 cambios aplicados + AFNAN 9AM DIVE EDP 150ML disponible).
-SIGUIENTE_PASO_1: Revision auditada post-sincronizacion (ofertas, precios que subieron, precios que bajaron).
+AUDITORIA_COMPLETADA_100%:
+- datos.js verificado: 4173 perfumes (DISP:3534 | AGOT:639 | OFERTAS:0 | SUBIO:1 | BAJO:0).
+- motor_sincronizacion.py (156 lineas) respeta 100% cuarentena (escanear -> pendientes.json | aplicar/descartar -> aprobados.json).
+- .github/workflows/sincronizar.yml activo con cron 6:00 AM + workflow_dispatch manual.
+- Hallazgo exacto en index.html: HTML de modalSyncAdmin intacto (pos=153087), pero btnSyncAdmin (pos=9106) apunta a abrirModalSync() y falta el bloque JS (dispararRobotGh, enviarAccionSyncGh, cambiarTabSync, marcarTodosTabSync, guardarTokenGh).
+SIGUIENTE_PASO_1 (Turno 1/8): Restaurar bloque JS completo de modalSyncAdmin, reconectar btnSyncAdmin a abrirSyncAdmin() y asegurar limpieza de aprobados.json en sincronizar.yml (con node --check = 0 errores).
 SIGUIENTE_PASO_2: Modulo 2 (Semaforo de Socios & Mayoristas).
 SIGUIENTE_PASO_3: Modulo 3 (Admin & Sincronizacion GitHub).
 SIGUIENTE_PASO_4: Modulo 4 (Modo Costo, Consultar Perfume).
