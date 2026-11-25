@@ -61,15 +61,15 @@
 55. AL FINALIZAR Y VERIFICAR EN VIVO CADA MODULO, DESCARGAR AUTOMATICAMENTE index.html LIMPIO A DOWNLOADS Y SUBIR RESPALDO ACTUALIZADO CON git push origin main.
 
 === PUNTO EXACTO DE CONTINUIDAD ===
-FECHA_HONDURAS: 2026-11-25 15:06 CST | TURNO: 6/8
+FECHA_HONDURAS: 2026-11-25 15:11 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
 REGLAS ACTIVAS: 1 A 55 | REPO: distribuidoramacr/Aroma-Parfums
 WEB: https://github.io
 
 MODULO_1_COMPLETADO_Y_VERIFICADO_EN_VIVO:
-- Sincronizador Manual y Cuarentena Selectiva (modalSyncAdmin) 100% operativo y probado en vivo (Escanear La Fe -> 0 en cuarentena).
-- index.html limpio descargado a Downloads y respaldado en GitHub (Regla 55).
+- Sincronizador Manual y Cuarentena Selectiva (modalSyncAdmin) 100% operativo en PC y Movil (Escanear La Fe -> HTTP 204 -> 0 en cuarentena).
+- index.html limpio descargado y respaldado en GitHub (Regla 55).
 
 MODULO_2_SIGUIENTE (Control de Red y Semaforo - Socios & Mayoristas):
-- Ubicacion HTML en index.html: pos=151000 a 152936.
-- IDs ya auditados: inpBloquearManual, accionBloqueoRed, tabRedVerde (cntVerde), tabRedAmarillo (cntAmarillo), tabRedRojo (cntRojo), cambiarTabRed, listaSemaforoRed, cerrarTableroRed().
-- Pendiente Turno 7/8 (solo lectura previa): localizar boton Admin que abre el modal del Semaforo y verificar fuente de datos de Socios/Mayoristas antes de implementar su logica JS.
+- ID exacto del modal: id="modalTableroRed" (pos=150666 a 152936).
+- Botones/IDs HTML confirmados: cerrarTableroRed(), inpBloquearManual, accionBloqueoRed, tabRedVerde (cntVerde), tabRedAmarillo (cntAmarillo), tabRedRojo (cntRojo), cambiarTabRed, listaSemaforoRed.
+- Hallazgo clave para Turno 1/8 (solo lectura previa): existe referencia a 'Semaforo' en pos=99030 de index.html; leer pos 98900-99400 y verificar de donde se leen los Socios/Mayoristas antes de escribir su JS.
