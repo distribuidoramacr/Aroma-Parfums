@@ -73,3 +73,8 @@ WEB: https://github.io
 [HECHO] Variantes 150ML/200ML en motor_sincronizacion.py. Modulo 2: Semaforo de Socios & Mayoristas (control de accesos activos y vencidos).
 [PENDIENTE 2] Modulo 3: Administracion & Sincronizacion automatica con GitHub Pages.
 [PENDIENTE 3] Modulo 4: Modo Costo, Consultar Perfume y revision final de filtros en movil.
+
+=== REFRESH SESION (2026-11-25 10:35 CST) ===
+TURNO: 1/8 | REGLAS ACTIVAS: 1 A 50
+COMPLETADO: Match variantes 150ML/200ML en motor_sincronizacion.py (commit 70cbcab) y lectura lineas 1-150.
+SIGUIENTE: Verificar ejecucion limpia de motor_sincronizacion.py (escanear) antes de Modulo 2.
