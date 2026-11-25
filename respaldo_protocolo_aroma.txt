@@ -55,3 +55,12 @@ SIGUIENTE: Continuar modulo pendiente.
 39. LIMITE DE LONGITUD DINAMICO EN AUDITORIA: Antes de fijar un umbral numerico en un assert de longitud, calcular el tamano real del bloque mas extenso y asignar un margen holgado (< 6500).
 40. RESTAURACION INTEGRAL DE IDS HERMANOS: Cuando una funcion JS alterna visibilidad entre varios id en secuencia (polDetalle, polSocio, polMayorista), verificar y restaurar todos los id hermanos antes de ejecutar los assert.
 41. VALIDACION DE CONTEO LOCALIZADO EN AUDITORIA: No usar assert h2.count(estilo) == 0 global sin verificar si otro modulo usa ese color; validar dentro del contenedor especifico (polSocio).
+42. CONTEO RELATIVO AL ESTADO BASE EN AUDITORIA: Al insertar N elementos nuevos (ej. botones X), nunca asumir que h.count(x) era 0; validar siempre h2.count(x) == h.count(x) + N.
+
+=== BITACORA DE AVANCE Y PENDIENTES ===
+[HECHO] 3 bandas oscuras con borde dorado (det, soc, may).
+[HECHO] Textos corregidos (GRATIS, comprobante de compra, antes de adquirir, sin estrellitas).
+[HECHO] IDs polDetalle, polSocio y polMayorista activos.
+[HECHO] Programa de Socio Comercial en boton desplegable.
+[HECHO] Boton X dorado y cierre al clic afuera en 7 paneles.
+[PENDIENTE] Verificar en Chrome clave S12 y cierre con X.
