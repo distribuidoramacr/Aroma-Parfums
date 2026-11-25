@@ -63,13 +63,11 @@
 56. PROHIBIDO ADIVINAR SANGRIAS O ANCLAS EN PYTHON (USAR INDICE DE LINEA VERIFICADO) Y PROHIBIDO DAR POR CERRADO UN MODULO SIN PRUEBA REAL EN VIVO.
 
 === PUNTO EXACTO DE CONTINUIDAD ===
-FECHA_HONDURAS: 2026-11-25 16:00 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
-REGLAS ACTIVAS: 1 A 55 | REPO: distribuidoramacr/Aroma-Parfums
+FECHA_HONDURAS: 2026-11-25 16:50 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
+REGLAS ACTIVAS: 1 A 56 | REPO: distribuidoramacr/Aroma-Parfums
 WEB: https://github.io
 
-MODULO_1_COMPLETADO_Y_VERIFICADO_AL_100:
-- Sincronizador Manual + Cuarentena Selectiva + Boton Comparar ('Mi Tienda' vs 'Nuevo') 100% operativos en vivo.
-- Regla de Ofertas Automaticas verificada en motor_sincronizacion.py: si costo baja >= L 100 (df <= -100) se clasifica [OFERTA] (rebaja min L 150 si Detalle >= 1600 o L 100 si < 1600) y al darle 'Aplicar' activa automaticamente o=1 (pestana Ofertas).
-
-SIGUIENTE_PASO_1 (Turno 1/8 - Modulo 2 Control de Red y Semaforo):
-- Abrir en vivo Administracion -> pestana Red (renderAdmRed) en https://github.io y confirmar con el usuario si requiere algun ajuste o queda listo para cerrar Modulo 2 segun Regla 55.
+ESTADO_ACTUAL_MODULO_1 (Sincronizador Manual + Cuarentena Selectiva):
+- motor_sincronizacion.py actualizado con IDs unicos NAM_... (commit ec88a7f).
+- Al aplicar MUGLER ANGEL ELIXIR EDP 100ML (M), pendientes.json conserva 'En espera: 9' items (NO se borraron en servidor), pero el modal visual los mostro ocultos tras recargar.
+- SIGUIENTE_PASO_1 (Turno 1/8): Revisar salida de pendientes.json y renderTablaSync leida en Turno 8/8 para corregir el filtro/render visual de las pestanas y cerrar prueba real en vivo (Regla 56) antes de pasar a Modulo 2 (Semaforo).
