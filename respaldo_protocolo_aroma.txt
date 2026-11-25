@@ -41,3 +41,14 @@ SIGUIENTE: Continuar modulo pendiente.
 25. ANCLAS DE TEXTO VISIBLE SIN CSS: Prohibido incluir style='...' en anclas; buscar texto visible y retroceder con rfind('<div', 0, pos).
 26. PROHIBIDO EMOJIS EN ANCLAS: Buscar siempre palabras limpias sin emojis para evitar fallos por caracteres ocultos.
 27. CONTADOR [TURNO X/8] Y REFRESH OBLIGATORIO: Numerar cada respuesta como [Turno X/8] y ejecutar refrescamiento completo del protocolo y estado en cada turno 8.
+28. LIMITE DE CORTE Y PRESERVACION DE SCRIPTS: Exigir siempre 0 < (e_pos - s_pos) < 3500 y verificar que h2.count('<script') == h.count('<script') antes de escribir en disco.
+29. CIERRE DE DIV POR BALANCEO EXACTO: Prohibido buscar '</div></div>' a ciegas; usar siempre conteo balanceado de <div vs </div> y prohibir '<script' dentro del rango cortado.
+30. ASSERT OBLIGATORIO DE INDICE != -1: Prohibido usar s_pos en slices h2[:s_pos] sin ejecutar assert s_pos != -1 antes.
+30. ASSERT OBLIGATORIO DE INDICE != -1: Prohibido usar s_pos en slices h2[:s_pos] sin ejecutar assert s_pos != -1 antes.
+31. VERIFICAR ESTADO EN DISCO TRAS FALLO: Si un bloque previo fallo antes de write(), asumir el estado original del archivo.
+32. PROHIBIDO ADIVINAR NIVELES DE rfind('<div'): Usar exactamente los 2 niveles verificados (d1 y s_pos) y validar rango < 3000.
+33. ID UNICO POR PANEL: Asignar id='gdp_det/soc/may' a cada bloque nuevo para editarlo directamente por ID en el futuro.
+34. CERO SUPOSICIONES SIN VERIFICACION: Validar ausencia de <script y existencia de los 3 IDs antes de escribir en disco.
+36. LECTURA, ANALISIS, AUDITORIA Y PRUEBA PREVIA OBLIGATORIA: Prohibido enviar o escribir cambios sin antes leer el bloque real en consola, analizar indices, auditar y probar en memoria.
+37. CURSOR MOVIL EN REEMPLAZOS ITERATIVOS: Al reemplazar multiples bloques en un bucle, avanzar siempre el cursor despues del bloque insertado para no re-procesar el mismo fragmento.
+38. CONTEO EXACTO DE IDENTIFICADORES EN AUDITORIA: Antes de definir un assert .count(x) == n, verificar cuantas veces aparece x entre atributos data-t e id en la plantilla HTML.
