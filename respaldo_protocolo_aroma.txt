@@ -61,10 +61,18 @@
 55. AL FINALIZAR Y VERIFICAR EN VIVO CADA MODULO, DESCARGAR AUTOMATICAMENTE index.html LIMPIO A DOWNLOADS Y SUBIR RESPALDO ACTUALIZADO CON git push origin main.
 
 === PUNTO EXACTO DE CONTINUIDAD ===
-FECHA_HONDURAS: 2026-11-25 14:33 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
+FECHA_HONDURAS: 2026-11-25 14:43 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
 REGLAS ACTIVAS: 1 A 55 | REPO: distribuidoramacr/Aroma-Parfums
 WEB: https://github.io
-ESTADO_VERIFICADO:
-- Modulo Sincronizador Manual y Cuarentena Selectiva (modalSyncAdmin) 100% operativo y probado en PC y Movil.
-- Auditoria previa Modulo 2 (Semaforo de Socios & Mayoristas) realizada sin cambios: listaSemaforoRed=1, abrirSemaforo=0, p_det=2, soc=36, may=41.
-SIGUIENTE_PASO_1 (Turno 1/8): Lectura previa del bloque alrededor de listaSemaforoRed en index.html (0 cambios) antes de cualquier ajuste en Modulo 2.
+
+TAREA_1_INMEDIATA (Turno 1/8 - Terminar Sincronizador Manual):
+- Modal modalSyncAdmin ya abre en PC y Movil y guarda token en localStorage ('gh_token_aroma').
+- Al pulsar 'Escanear La Fe' devolvio 'Error red: Failed to fetch'.
+- Paso exacto Turno 1/8: auditar llamadas previas a ://github.com en index.html y formato de GITHUB_TOKEN en Secrets (0 cambios) para corregir headers/CORS de dispararRobotGh y dejar 'Escanear La Fe' operativo en PC y Movil.
+
+TAREA_2_SIGUIENTE (Modulo 2 - Control de Red y Semaforo, hallazgos ya leidos):
+- Ubicacion HTML en index.html: pos=151000 a 152936 (antes de modalSyncAdmin).
+- Encabezado: 'Control de Red y Semaforo | Clasificacion automatica en tiempo real', cierre onclick="cerrarTableroRed()".
+- Bloqueo manual: input id="inpBloquearManual" + boton onclick="accionBloqueoRed('bloquear',document.getElementById('inpBloquearManual').value)".
+- Pestanas y contadores: tabRedVerde (cntVerde), tabRedAmarillo (cntAmarillo), tabRedRojo (cntRojo), onclick="cambiarTabRed(...)".
+- Contenedor lista: id="listaSemaforoRed" (count=1). Funciones JS cambiarTabRed / accionBloqueoRed aun pendientes de definir/conectar tras cerrar Tarea 1.
