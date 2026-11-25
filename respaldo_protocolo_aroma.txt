@@ -47,6 +47,11 @@
 
 47. AUDITORIA PREVIA DE DUPLICADOS Y CONTEO RELATIVO: Prohibido escribir assert h2.count(fn) == 1 sin imprimir antes todas las posiciones (POS 0 en adelante) de fn en el archivo base (Reglas 6, 7, 38 y 42).
 
+
+48. URLS COMPLETAS SIN FRAGMENTAR: Prohibido armar URLs con f-strings partidos; usar siempre el dominio completo verificado https://lafe.com.
+
+49. CERO REINTENTOS CON EL MISMO METODO: Si un metodo falla una vez (traductor navegador, red o entorno), prohibido repetir variantes; usar lectura local directa sin red ni URLs externas.
+
 === ESTADO Y MEMORIA INTEGRAL AROMA PARFUMS ===
 FECHA: 2026-11-25 00:20 CST | REPO: distribuidoramacr/Aroma-Parfums
 WEB: https://github.io
