@@ -63,11 +63,7 @@
 56. PROHIBIDO ADIVINAR SANGRIAS O ANCLAS EN PYTHON (USAR INDICE DE LINEA VERIFICADO) Y PROHIBIDO DAR POR CERRADO UN MODULO SIN PRUEBA REAL EN VIVO.
 
 === PUNTO EXACTO DE CONTINUIDAD ===
-FECHA_HONDURAS: 2026-11-25 16:50 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
+FECHA_HONDURAS: 2026-11-25 17:16 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
 REGLAS ACTIVAS: 1 A 56 | REPO: distribuidoramacr/Aroma-Parfums
-WEB: https://github.io
-
-ESTADO_ACTUAL_MODULO_1 (Sincronizador Manual + Cuarentena Selectiva):
-- motor_sincronizacion.py actualizado con IDs unicos NAM_... (commit ec88a7f).
-- Al aplicar MUGLER ANGEL ELIXIR EDP 100ML (M), pendientes.json conserva 'En espera: 9' items (NO se borraron en servidor), pero el modal visual los mostro ocultos tras recargar.
-- SIGUIENTE_PASO_1 (Turno 1/8): Revisar salida de pendientes.json y renderTablaSync leida en Turno 8/8 para corregir el filtro/render visual de las pestanas y cerrar prueba real en vivo (Regla 56) antes de pasar a Modulo 2 (Semaforo).
+ESTADO: motor_sincronizacion.py blindado con NAM_ en lineas 63, 84 y 114 (commit 3956dc6).
+SIGUIENTE_PASO_1 (Turno 1/8): Verificar dispararRobotGh leida en Turno 8/8 y completar prueba real en vivo (Regla 56) antes de Modulo 2 (Semaforo).
