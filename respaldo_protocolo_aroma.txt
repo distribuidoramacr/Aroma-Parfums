@@ -52,3 +52,4 @@ SIGUIENTE: Continuar modulo pendiente.
 36. LECTURA, ANALISIS, AUDITORIA Y PRUEBA PREVIA OBLIGATORIA: Prohibido enviar o escribir cambios sin antes leer el bloque real en consola, analizar indices, auditar y probar en memoria.
 37. CURSOR MOVIL EN REEMPLAZOS ITERATIVOS: Al reemplazar multiples bloques en un bucle, avanzar siempre el cursor despues del bloque insertado para no re-procesar el mismo fragmento.
 38. CONTEO EXACTO DE IDENTIFICADORES EN AUDITORIA: Antes de definir un assert .count(x) == n, verificar cuantas veces aparece x entre atributos data-t e id en la plantilla HTML.
+39. LIMITE DE LONGITUD DINAMICO EN AUDITORIA: Antes de fijar un umbral numerico en un assert de longitud, calcular el tamano real del bloque mas extenso y asignar un margen holgado (< 6500).
