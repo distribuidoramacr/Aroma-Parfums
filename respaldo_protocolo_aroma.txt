@@ -64,3 +64,4 @@ SIGUIENTE: Continuar modulo pendiente.
 [HECHO] Programa de Socio Comercial en boton desplegable.
 [HECHO] Boton X dorado y cierre al clic afuera en 7 paneles.
 [PENDIENTE] Verificar en Chrome clave S12 y cierre con X.
+43. CONTEO DE TURNOS Y REFRESH AUTOMATICO EN 8: Cada par (mensaje usuario + respuesta modelo) cuenta como 1 turno [Turno X/8]. Al llegar al Turno 8/8, enviar automaticamente la celda Python de Refresh del Protocolo sin que el usuario lo pida.
