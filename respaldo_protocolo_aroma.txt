@@ -79,6 +79,7 @@ FECHA: 2026-11-24 | ESTADO: ACTIVO
 3. EN CURSO AHORA:
    - Conectar aplicarAsesorOlfativo() con el catalogo maestro real y reset al abrir.
 4. AGENDA PENDIENTE:
+- [HECHO] Boton Consultar arriba y stock abajo en 2 lineas compactas.
 - [HECHO] Ajuste CSS tarjetas .card (.price nowrap + botones Al carrito y Consultar stock encajados en PC y movil).
    - Modulo 2: Semaforo de Socios y Mayoristas.
    - Modulo 3: Administracion y GitHub Pages.
