@@ -36,3 +36,7 @@ fb4ba59 Mision y Vision exactas de documento oficial
 0c5d34d Terminos del Servicio 20 secciones completas
 HECHO: Aviso GARANTIA Y DISPONIBILIDAD actualizado y auditado en index.html.
 SIGUIENTE: Continuar modulo pendiente.
+23. RESPALDO AUTOMATICO DE SESION: En cada cambio, guardar bitacora detallada (que se toco, por que y siguiente paso exacto) en respaldo_protocolo_aroma.txt dentro de /content/Aroma-Parfums y subirlo a GitHub.
+24. CIERRES CORTOS Y GESTION DE PENDIENTES: Usar ancla corta unica + find('</div>', pos)+6 y sincronizar pendientes.json en GitHub.
+25. ANCLAS DE TEXTO VISIBLE SIN CSS: Prohibido incluir style='...' en anclas; buscar texto visible y retroceder con rfind('<div', 0, pos).
+26. PROHIBIDO EMOJIS EN ANCLAS: Buscar siempre palabras limpias sin emojis para evitar fallos por caracteres ocultos.
