@@ -1,18 +1,15 @@
 name: Sincronizar Catalogo La Fe
-
 on:
   schedule:
-    - cron: '0 12 * * 1'
+    - cron: '0 12 * * *'
   workflow_dispatch:
     inputs:
       accion:
         description: 'Accion (escanear o aplicar)'
         required: true
         default: 'escanear'
-
 permissions:
   contents: write
-
 jobs:
   sincronizar:
     runs-on: ubuntu-latest
@@ -26,5 +23,5 @@ jobs:
           git config user.name "Robot Aroma Parfums"
           git config user.email "bot@aromaparfums.hn"
           git add datos.js pendientes.json
-          git commit -m "Actualizacion desde Panel 0312" || exit 0
+          git commit -m "Sync automatico La Fe" || exit 0
           git push
