@@ -82,3 +82,5 @@ FECHA: 2026-11-24 | ESTADO: ACTIVO
    - Modulo 2: Semaforo de Socios y Mayoristas.
    - Modulo 3: Administracion y GitHub Pages.
    - Modulo 4: Modo Costo y filtros en movil.
+
+45. AUDITORIA DE ELEMENTOS EXISTENTES ANTES DE INSERTAR: Antes de crear un id nuevo (ej. waTip), verificar h.count(id) en consola; en movil eliminar :focus pegajoso y usar clase temporal con setTimeout.
