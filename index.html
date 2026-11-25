@@ -640,6 +640,30 @@ window.marcarTodosTabSync=function(forzar){
   window.renderSyncAdmin();
 };
 
+window._buscarActualTienda=function(c){
+  var arr=Array.isArray(window.P)?window.P:(Array.isArray(window.PERFUMES)?window.PERFUMES:[]);
+  var nm=String(c&&c.n||'').trim().toUpperCase();
+  var im=String(c&&c.i||'').trim();
+  for(var j=0;j<arr.length;j++){
+    if(nm&&String(arr[j].n||'').trim().toUpperCase()===nm)return arr[j];
+  }
+  for(var k=0;k<arr.length;k++){
+    if(im&&String(arr[k].i||'').trim()===im)return arr[k];
+  }
+  return null;
+};
+
+window.toggleCompSync=function(btn,ev){
+  if(ev&&ev.preventDefault)ev.preventDefault();
+  if(ev&&ev.stopPropagation)ev.stopPropagation();
+  var cid=btn.getAttribute('data-cid')||'';
+  var box=document.getElementById('comp_'+cid);
+  if(!box)return;
+  var ab=box.style.display==='grid';
+  box.style.display=ab?'none':'grid';
+  btn.textContent=ab?'Comparar':'Ocultar';
+};
+
 window.renderSyncAdmin=function(){
   window._actualizarContadoresSync();
   var box=document.getElementById('listaCambiosSync');
@@ -663,13 +687,36 @@ window.renderSyncAdmin=function(){
     }else{
       det='Antes: L '+(c.p_ant||0)+' -> Nuevo: L '+(c.p_sug||0)+' (Socio: L '+(c.s_sug||0)+')';
     }
-    html+='<label style="display:flex;align-items:flex-start;gap:8px;padding:9px;'
-      +'border:1px solid #e2e8f0;border-radius:10px;margin-bottom:6px;background:#fff;cursor:pointer;">'
-      +'<input type="checkbox" '+chk+' data-sid="'+id+'" onchange="toggleItemSync(this)" '
-      +'style="margin-top:3px;">'
+    var act=window._buscarActualTienda(c);
+    var cid=id.replace(/[^a-zA-Z0-9_-]/g,'_')+'_'+Math.random().toString(36).slice(2,6);
+    var miTxt=act
+      ?('Costo K: L '+(act.k||0)+'<br>Detalle D: L '+(act.p||0)+'<br>Socio S: L '+(act.s||0)
+        +'<br>Mayor M: L '+(act.m||0)+'<br>Estado: '+(act.a===1?'Agotado':'Disponible'))
+      :'Producto nuevo<br>(Aun no existe en Mi Tienda)';
+    var nvK=(c.k_nuevo!=null?c.k_nuevo:(act?act.k:0));
+    var nvD=(c.p_sug!=null?c.p_sug:(act?act.p:0));
+    var nvS=(c.s_sug!=null?c.s_sug:(act?act.s:0));
+    var nvM=(c.m_sug!=null?c.m_sug:(act?act.m:0));
+    var nvA=(tp==='DISP'?(c.a_nuevo===1?'Agotado':'Disponible'):(act&&act.a===1?'Agotado':'Disponible'));
+    var nvTxt='Costo K: L '+nvK+'<br>Detalle D: L '+nvD+'<br>Socio S: L '+nvS
+      +'<br>Mayor M: L '+nvM+'<br>Estado: '+nvA;
+    html+='<div style="padding:9px;border:1px solid #e2e8f0;border-radius:10px;margin-bottom:6px;background:#fff;">'
+      +'<div style="display:flex;align-items:flex-start;gap:8px;">'
+      +'<input type="checkbox" '+chk+' data-sid="'+id+'" onchange="toggleItemSync(this)" style="margin-top:3px;cursor:pointer;">'
       +'<div style="flex:1;"><div style="font-weight:700;color:#0f172a;">'
       +'['+tp+'] '+(c.n||'')+' <span style="color:#64748b;font-weight:600;">('+(c.c||'')+')</span></div>'
-      +'<div style="font-size:11px;color:#475569;margin-top:2px;">'+det+'</div></div></label>';
+      +'<div style="font-size:11px;color:#475569;margin-top:2px;">'+det+'</div></div>'
+      +'<button type="button" data-cid="'+cid+'" onclick="toggleCompSync(this,event)" '
+      +'style="padding:4px 8px;border-radius:7px;border:1px solid #cbd5e1;background:#f8fafc;'
+      +'color:#1e1b4b;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;">Comparar</button></div>'
+      +'<div id="comp_'+cid+'" style="display:none;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px;'
+      +'padding:8px;border-radius:8px;background:#f8fafc;border:1px solid #e2e8f0;font-size:11px;">'
+      +'<div style="background:#fff;padding:7px;border-radius:7px;border:1px solid #e2e8f0;">'
+      +'<div style="font-weight:800;color:#334155;margin-bottom:3px;">Mi Tienda</div>'
+      +'<div style="color:#475569;line-height:1.45;">'+miTxt+'</div></div>'
+      +'<div style="background:#eef2ff;padding:7px;border-radius:7px;border:1px solid #c7d2fe;">'
+      +'<div style="font-weight:800;color:#312e81;margin-bottom:3px;">Nuevo</div>'
+      +'<div style="color:#1e1b4b;line-height:1.45;">'+nvTxt+'</div></div></div></div>';
   });
   box.innerHTML=html;
 };
