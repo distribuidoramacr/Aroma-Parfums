@@ -60,7 +60,10 @@ def main():
   apr=json.load(open('aprobados.json',encoding='utf-8'))
   pend=json.load(open('pendientes.json',encoding='utf-8'))
   sids,ped=set(str(x) for x in apr.get('ids',list())),apr.get('precios',dict())
-  mp=dict((str(i.get('id','')),i) for i in items)
+  mp={}
+  for i in items:
+    if str(i.get('id') or '').strip(): mp[str(i.get('id')).strip()]=i
+    mp['NAM_'+norm(i.get('n',''))]=i
   mx=max((int(i.get('id',0)) for i in items if str(i.get('id','')).isdigit()),default=0)
   for c in pend.get('cambios',list()):
    cid=str(c.get('id',''))
@@ -108,7 +111,7 @@ def main():
   if cl not in vivo:
    cl=next((k for k in vivo if re.sub(r'\s*\(?DUPE.*$','',k)==cl_b),'')
   if not cl:continue
-  lv=vivo.get(cl);iid,ka,kn=str(it.get('id','')),int(it.get('k',0)),int(lv.get('k',0));lin=it.get('l',linea_c(it.get('c',''),it.get('n','')))
+  lv=vivo.get(cl);iid,ka,kn=(str(it.get('id') or '').strip() or ('NAM_'+norm(it.get('n','')))),int(it.get('k',0)),int(lv.get('k',0));lin=it.get('l',linea_c(it.get('c',''),it.get('n','')))
   if int(it.get('a',0))!=int(lv.get('a',0)):cmb.append({'id':iid,'tipo':'DISP','n':it.get('n',''),'c':it.get('c',''),'l':lin,'i':it.get('i',''),'a_nuevo':int(lv.get('a',0)),'detalle':'Agotado en La Fe' if lv.get('a')==1 else 'Disponible de nuevo'})
   if ka>0 and kn>0:
    df=kn-ka
