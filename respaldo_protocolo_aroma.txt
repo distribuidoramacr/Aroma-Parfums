@@ -1,0 +1,38 @@
+=== PROTOCOLO MAESTRO AROMA PARFUMS (12 REGLAS) ===
+1. Un solo bloque de codigo limpio por mensaje.
+2. Avanzar estrictamente un solo modulo y un solo boton a la vez.
+3. Esperar siempre fotografia de confirmacion antes de pasar al siguiente paso.
+4. Auditoria de sintaxis (node --check = 0 errores) + Simulacion Real obligatoria antes de descargar.
+5. Estricto control de variables locales y globales (prueba logica previa antes de desplegar).
+6. Nunca dejar dos funciones con el mismo nombre y simular siempre el clic real del boton HTML.
+7. Inspeccionar siempre las primeras ocurrencias en todo el archivo (POS: 0 en adelante), no solo al final.
+8. Usar siempre la URL publica real https://github.io (nunca rutas locales).
+9. No escribir Base64 manualmente; usar archivos o funciones limpias verificadas.
+10. Mantener bloques cortos, claros y modulares.
+11. Ejecutar siempre desplegar_quirurgico() de protocolo.py para cada cambio.
+12. Corte quirurgico estricto: reemplazar solo desde 'function nombre(' hasta la siguiente 'function ', sin cortar el resto del <script>.
+
+=== ESTADO DEL PROYECTO AROMA PARFUMS ===
+[OK] Motor Guardian: protocolo.py + protocolo.txt (12 reglas activas)
+[OK] Modulo 1: Generar Link (Temporal Socio 12h, Temporal Mayorista 12h, Directo Socio S12, Directo Mayorista M03 + Envio WhatsApp +504)
+[PENDIENTE] Modulo 2: Semaforo de Socios & Mayoristas (control de accesos activos/vencidos)
+[PENDIENTE] Modulo 3: Administracion & Sincronizar con GitHub Pages
+[PENDIENTE] Modulo 4: Modo Costo, Consultar Perfume y filtros en movil
+15. ANCLAS SIN SALTOS: Prohibido cruzar punto y coma (;) o saltos de linea en anclas; usar siempre subcadenas cortas de 8-15 caracteres localizadas con h.find(sub, p_fn).
+17. PROHIBIDO OFFSETS NUMERICOS: Buscar siempre por texto literal visible (h.find('Sin tel')), nunca p+500.
+18. TEXTWRAP 70 OBLIGATORIO: Toda lectura de codigo debe imprimirse con textwrap.fill(repr(...), 70) para que quepa en pantalla vertical sin girar el celular.
+16. CODIGO M: Lectura real previa obligatoria + anclas cortas <=18 chars por indice h.find() + auditoria caracter por caracter (cierres, mayusculas y signos sin prisa) + validacion en Chrome antes de avanzar.
+19. ASSERTS SEPARADOS Y COUNT REAL: Prohibido exigir count()==1 sin verificar antes; localizar primera ocurrencia (Regla 6) y actualizar /content/index.html y /content/Aroma-Parfums/index.html.
+20. VALIDAR SCRIPT VS JSON: En auditoria JS, validar <script type='application/json'> con json.loads() y solo los <script> ejecutables con node --check.
+21. BITACORA DE CONTINUIDAD: Guardar aqui fecha, ultimo commit, tarea hecha y siguiente paso.
+22. PUSH AUTOMATICO OBLIGATORIO: Todo cambio auditado se sube de inmediato a GitHub con git push.
+
+=== ULTIMA SESION (2026-11-25 00:54) ===
+ULTIMOS COMMITS:
+9960b63 Politica de Envio Recoleccion y Pagos completa
+cdeef47 FAQ con espaciado puntitos dorados y cierre centrado
+420dfe5 FAQ completo con originalidad y mayoristas
+fb4ba59 Mision y Vision exactas de documento oficial
+0c5d34d Terminos del Servicio 20 secciones completas
+HECHO: Aviso GARANTIA Y DISPONIBILIDAD actualizado y auditado en index.html.
+SIGUIENTE: Continuar modulo pendiente.
