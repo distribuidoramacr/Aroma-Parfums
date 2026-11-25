@@ -67,22 +67,23 @@ SIGUIENTE: Continuar modulo pendiente.
 43. CONTEO DE TURNOS Y REFRESH AUTOMATICO EN 8: Cada par (mensaje usuario + respuesta modelo) cuenta como 1 turno [Turno X/8]. Al llegar al Turno 8/8, enviar automaticamente la celda Python de Refresh del Protocolo sin que el usuario lo pida.
 44. PROHIBIDO find('};') EN JS Y NODE --CHECK OBLIGATORIO: Nunca cerrar una funcion JS con find('};'); usar siempre ancla de la siguiente funcion o llaves balanceadas, y validar el script con node --check antes de guardar o descargar.
 
-=== MEMORIA INTEGRAL AROMA PARFUMS ===
-FECHA: 2026-11-24 | ESTADO: ACTIVO
-1. REGLAS PROTOCOLO: 1 a 44 activas y respaldadas en respaldo_protocolo_aroma.txt.
-2. LOGROS COMPLETADOS EN ESTA SESION:
-   - 3 bandas oscuras centradas (max-width:980px) en polDetalle, polSocio y polMayorista.
-   - Textos legales oficiales (GRATIS, comprobante de compra, antes de adquirir, sin estrellitas).
-   - Programa de Socio Comercial y Modalidades de Entrega integrados en boton oscuro desplegable.
-   - Boton X dorado en los 7 recuadros y cierre automatico al hacer clic afuera.
-   - Modal Asesor Olfativo actualizado a 2 columnas (Para quien es, Ocasion, Linea preferida, Familia Olfativa y Presupuesto maximo).
-3. EN CURSO AHORA:
-   - Conectar aplicarAsesorOlfativo() con el catalogo maestro real y reset al abrir.
-4. AGENDA PENDIENTE:
-- [HECHO] Boton Consultar arriba y stock abajo en 2 lineas compactas.
-- [HECHO] Ajuste CSS tarjetas .card (.price nowrap + botones Al carrito y Consultar stock encajados en PC y movil).
-   - Modulo 2: Semaforo de Socios y Mayoristas.
-   - Modulo 3: Administracion y GitHub Pages.
-   - Modulo 4: Modo Costo y filtros en movil.
+=== MEMORIA INTEGRAL Y ESTADO AROMA PARFUMS ===
+ACTUALIZADO: 2026-11-24 23:58 CST | REGLAS: 1 a 46
+REPO: https://github.comAroma-Parfums | WEB: https://github.io
 
-45. AUDITORIA DE ELEMENTOS EXISTENTES ANTES DE INSERTAR: Antes de crear un id nuevo (ej. waTip), verificar h.count(id) en consola; en movil eliminar :focus pegajoso y usar clase temporal con setTimeout.
+--- 1. LOGROS COMPLETADOS AL 100% ---
+[HECHO] Motor Guardian: protocolo.py + respaldo_protocolo_aroma.txt (Reglas 1 a 46).
+[HECHO] 3 bandas oscuras centradas (max-width:980px) en polDetalle, polSocio y polMayorista.
+[HECHO] Textos legales oficiales (GRATIS, comprobante de compra, antes de adquirir, sin estrellitas).
+[HECHO] Programa de Socio Comercial y Modalidades de Entrega integrados en boton oscuro desplegable.
+[HECHO] Boton X dorado en los 7 recuadros y cierre automatico al hacer clic afuera.
+[HECHO] Asesor Olfativo (15s) en cuadricula de 2 columnas conectado al arreglo real items.
+[HECHO] Modulo 1 Generar Link: Temporal Socio 12h, Temporal Mayorista 12h, Directo Socio 512, Directo Mayorista 803 + Envio WhatsApp +504.
+[HECHO] Globo WhatsApp flotante (2.2s sin quedarse pegado) y apertura al 1er toque en iPhone iOS y Android con window.location.assign.
+[HECHO] Tarjetas de catalogo (.price-box): precio en 1 linea (L 1,345) y botones compactos 'Al carrito' + 'Consultar / stock' en 2 lineas sin cortarse.
+
+--- 2. PENDIENTES POR HACER (PROXIMOS PASOS) ---
+[PENDIENTE 1] Afinar filtro de genero en Asesor Olfativo (15s) para que (M)=Mujer y (H)=Hombre no se crucen al buscar.
+[PENDIENTE 2] Modulo 2: Semaforo de Socios & Mayoristas (control de accesos activos/vencidos).
+[PENDIENTE 3] Modulo 3: Administracion & Sincronizacion automatica con GitHub Pages.
+[PENDIENTE 4] Modulo 4: Modo Costo, Consultar Perfume y revision final de filtros en movil.
