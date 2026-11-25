@@ -64,8 +64,12 @@
 
 57. PROHIBIDO ESCRIBIR URLS CON BARRAS LITERALES EN PYTHON; USAR SIEMPRE s = chr(47).
 
+58. PROHIBIDO ESCRIBIR ANCLAS MULTILINEA O CON ESPACIOS ADIVINADOS; USAR SIEMPRE REGEX CON \s* ACOTADA AL BLOQUE O INDICE DE LINEA VERIFICADO CON repr().
+
 === PUNTO EXACTO DE CONTINUIDAD ===
-FECHA_HONDURAS: 2026-11-25 17:16 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
-REGLAS ACTIVAS: 1 A 56 | REPO: distribuidoramacr/Aroma-Parfums
-ESTADO: motor_sincronizacion.py blindado con NAM_ en lineas 63, 84 y 114 (commit 3956dc6).
-SIGUIENTE_PASO_1 (Turno 1/8): Verificar dispararRobotGh leida en Turno 8/8 y completar prueba real en vivo (Regla 56) antes de Modulo 2 (Semaforo).
+FECHA_HONDURAS: 2026-11-25 17:25 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
+REGLAS ACTIVAS: 1 A 58 | REPO: distribuidoramacr/Aroma-Parfums
+ESTADO:
+- Regla 58 grabada fisicamente en respaldo_protocolo_aroma.txt.
+- motor_sincronizacion.py blindado con NAM_ en lineas 63, 84 y 114 (commit 3956dc6).
+SIGUIENTE_PASO_1 (Turno 1/8): Aplicar el parche acotado con regex en window.dispararRobotGh de index.html para mostrar el mensaje exacto de GitHub al pulsar Escanear La Fe y completar prueba en vivo (Regla 56) antes de Modulo 2 (Semaforo).
