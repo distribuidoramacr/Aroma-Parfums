@@ -88,7 +88,12 @@ def main():
   if relleno(tit,ptp,tg):continue
   imgs=pr.get('images',list());imu=imgs.pop(0).get('src','') if imgs else ''
   for v in pr.get('variants',list()):
-   vt=v.get('title','');fn=tit if(not vt or vt=='Default Title')else(tit+' - '+vt)
+   vt=v.get('title','')
+   mv=re.search(r'\b\d+\s*ML\b',vt,re.I)
+   if not vt or vt=='Default Title':fn=tit
+   elif mv and re.search(r'\b\d+\s*ML\b',tit,re.I):
+    fn=re.sub(r'\b\d+\s*ML\b',mv.group(0),tit,count=1,flags=re.I)
+   else:fn=tit+' '+vt
    if relleno(fn,ptp,tg):continue
    pc,cp=float(v.get('price') or 0),float(v.get('compare_at_price') or 0)
    if pc<=100:continue

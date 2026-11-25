@@ -52,6 +52,8 @@
 
 49. CERO REINTENTOS CON EL MISMO METODO: Si un metodo falla una vez (traductor navegador, red o entorno), prohibido repetir variantes; usar lectura local directa sin red ni URLs externas.
 
+50. CERO SUPOSICIONES EN REEMPLAZOS PY: localizar la linea exacta por ancla corta unica en splitlines(), extraer ind real y validar con compile(txt2,'<mem>','exec') antes de guardar.
+
 === ESTADO Y MEMORIA INTEGRAL AROMA PARFUMS ===
 FECHA: 2026-11-25 00:20 CST | REPO: distribuidoramacr/Aroma-Parfums
 WEB: https://github.io
@@ -68,6 +70,6 @@ WEB: https://github.io
 [HECHO] Tarjetas (.price-box): precio en 1 linea y botones compactos 'Al carrito' + 'Consultar / stock' en 2 lineas.
 
 --- PENDIENTES POR HACER (PROXIMA SESION) ---
-[PENDIENTE 1] Modulo 2: Semaforo de Socios & Mayoristas (control de accesos activos y vencidos).
+[HECHO] Variantes 150ML/200ML en motor_sincronizacion.py. Modulo 2: Semaforo de Socios & Mayoristas (control de accesos activos y vencidos).
 [PENDIENTE 2] Modulo 3: Administracion & Sincronizacion automatica con GitHub Pages.
 [PENDIENTE 3] Modulo 4: Modo Costo, Consultar Perfume y revision final de filtros en movil.
