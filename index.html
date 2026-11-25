@@ -580,7 +580,15 @@ window.cargarBuzonSync=function(){
           ?'Ultima lectura: '+window._syncData.fecha.slice(0,16).replace('T',' ')
           :'Lunes 6:00 AM o Manual')+' | En espera: '+window._syncData.cambios.length;
       }
-      window.renderSyncAdmin();
+      if(typeof DATOS==='undefined'&&!window._tiendaDatosCache){
+        fetch('datos.js?t='+Date.now()).then(function(r){return r.text();}).then(function(tx){
+          var i0=tx.indexOf('['),i1=tx.lastIndexOf(']');
+          if(i0!==-1&&i1>i0)window._tiendaDatosCache=JSON.parse(tx.slice(i0,i1+1));
+          window.renderSyncAdmin();
+        }).catch(function(){window.renderSyncAdmin();});
+      }else{
+        window.renderSyncAdmin();
+      }
     })
     .catch(function(){
       if(box)box.innerHTML='<div style="padding:14px;color:#b91c1c;">Error leyendo pendientes.json</div>';
@@ -640,8 +648,11 @@ window.marcarTodosTabSync=function(forzar){
   window.renderSyncAdmin();
 };
 
+window._tiendaDatosCache=null;
 window._buscarActualTienda=function(c){
-  var arr=(typeof DATOS!=='undefined'&&Array.isArray(DATOS))?DATOS:(Array.isArray(window.DATOS)?window.DATOS:[]);
+  var arr=(typeof DATOS!=='undefined'&&Array.isArray(DATOS))
+    ?DATOS
+    :(Array.isArray(window.DATOS)?window.DATOS:(Array.isArray(window._tiendaDatosCache)?window._tiendaDatosCache:[]));
   var nm=String(c&&c.n||'').trim().toUpperCase();
   var im=String(c&&c.i||'').trim();
   for(var j=0;j<arr.length;j++){
