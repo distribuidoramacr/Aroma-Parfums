@@ -57,7 +57,7 @@
 51. BLINDAJE DE CONTINUIDAD EN VIVO: Cada ejecucion sobrescribe
 
 === PUNTO EXACTO DE CONTINUIDAD ===
-FECHA_HONDURAS: 2026-11-25 10:53 CST | TURNO: 3/8
-ARCHIVO_ACTUAL: motor_sincronizacion.py (lineas 95-114)
-ESTADO_EXACTO: 42 cambios de variantes aplicados (commit f77cefb); auditando condicion de disponibilidad (a:0 vs a:1) para AFNAN 9AM DIVE 150ML.
-SIGUIENTE_PASO_UNICO: Ajustar condicion de disponibilidad en motor_sincronizacion.py y actualizar 9AM DIVE 150ML.
+FECHA_HONDURAS: 2026-11-25 10:55 CST | TURNO: 4/8
+ARCHIVO_ACTUAL: motor_sincronizacion.py + lafe_vivo.json
+ESTADO_EXACTO: Inspeccionando llave normalizada de 9AM DIVE 150ML en lafe_vivo.json vs datos.js.
+SIGUIENTE_PASO_UNICO: Afinar match por marca+modelo+ML en motor_sincronizacion.py si difiere texto entre parentesis.
