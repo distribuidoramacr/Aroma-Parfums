@@ -541,6 +541,7 @@ window._syncSel={};
 window.abrirSyncAdmin=function(){
   var m=document.getElementById('modalSyncAdmin');
   if(!m)return;
+  if(m.parentNode!==document.body)document.body.appendChild(m);
   m.style.display='flex';
   var tk=localStorage.getItem('gh_token_aroma')||'';
   var inp=document.getElementById('inpGhToken');
