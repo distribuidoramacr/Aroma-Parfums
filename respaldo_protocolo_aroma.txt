@@ -54,27 +54,10 @@
 
 50. CERO SUPOSICIONES EN REEMPLAZOS PY: localizar la linea exacta por ancla corta unica en splitlines(), extraer ind real y validar con compile(txt2,'<mem>','exec') antes de guardar.
 
-=== ESTADO Y MEMORIA INTEGRAL AROMA PARFUMS ===
-FECHA: 2026-11-25 00:20 CST | REPO: distribuidoramacr/Aroma-Parfums
-WEB: https://github.io
+51. BLINDAJE DE CONTINUIDAD EN VIVO: Cada ejecucion sobrescribe
 
---- COMPLETADOS AL 100% ---
-[HECHO] Motor Guardian: protocolo.py + respaldo_protocolo_aroma.txt (Reglas 1-46).
-[HECHO] 3 bandas oscuras centradas (max-width:980px) en polDetalle, polSocio y polMayorista.
-[HECHO] Textos legales oficiales (GRATIS, comprobante de compra, antes de adquirir).
-[HECHO] Programa de Socio Comercial y Modalidades de Entrega en boton oscuro desplegable.
-[HECHO] Boton X dorado en los 7 recuadros y cierre automatico al hacer clic afuera.
-[HECHO] Asesor Olfativo (15s) en 2 columnas conectado a items con filtro afinado: (M)=Mujer, (H)=Hombre, (U)=Unisex.
-[HECHO] Modulo 1 Generar Link: Temporal Socio/Mayorista 12h, Directo Socio 512, Directo Mayorista 803 + Envio WhatsApp +504.
-[HECHO] Globo WhatsApp temporal 2.2s + apertura al 1er toque en iPhone iOS y Android (window.location.assign).
-[HECHO] Tarjetas (.price-box): precio en 1 linea y botones compactos 'Al carrito' + 'Consultar / stock' en 2 lineas.
-
---- PENDIENTES POR HACER (PROXIMA SESION) ---
-[HECHO] Variantes 150ML/200ML en motor_sincronizacion.py. Modulo 2: Semaforo de Socios & Mayoristas (control de accesos activos y vencidos).
-[PENDIENTE 2] Modulo 3: Administracion & Sincronizacion automatica con GitHub Pages.
-[PENDIENTE 3] Modulo 4: Modo Costo, Consultar Perfume y revision final de filtros en movil.
-
-=== REFRESH SESION (2026-11-25 10:35 CST) ===
-TURNO: 1/8 | REGLAS ACTIVAS: 1 A 50
-COMPLETADO: Match variantes 150ML/200ML en motor_sincronizacion.py (commit 70cbcab) y lectura lineas 1-150.
-COMPLETADO SINCRONIZACION: 44 cambios aplicados en datos.js (4172 items validados con json.loads).
+=== PUNTO EXACTO DE CONTINUIDAD ===
+FECHA_HONDURAS: 2026-11-25 10:51 CST | TURNO: 2/8
+ARCHIVO_ACTUAL: motor_sincronizacion.py + datos.js
+ESTADO_EXACTO: Regla 51 guardada y motor_sincronizacion.py compilado con variantes (100ML/150ML/200ML/Tester/Estuche).
+SIGUIENTE_PASO_UNICO: Revisar 9AM DIVE en datos.js y correr un escaneo rapido cuando se indique.
