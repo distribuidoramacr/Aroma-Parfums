@@ -641,7 +641,7 @@ window.marcarTodosTabSync=function(forzar){
 };
 
 window._buscarActualTienda=function(c){
-  var arr=Array.isArray(window.P)?window.P:(Array.isArray(window.PERFUMES)?window.PERFUMES:[]);
+  var arr=(typeof DATOS!=='undefined'&&Array.isArray(DATOS))?DATOS:(Array.isArray(window.DATOS)?window.DATOS:[]);
   var nm=String(c&&c.n||'').trim().toUpperCase();
   var im=String(c&&c.i||'').trim();
   for(var j=0;j<arr.length;j++){
