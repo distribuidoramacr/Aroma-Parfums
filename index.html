@@ -31,7 +31,7 @@ header h1{font-size:22px;font-weight:800;margin-bottom:6px}.subtitle{font-size:1
 .btn-wa-send{width:100%;margin-top:14px;padding:12px;background:var(--wa);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:800;cursor:pointer}
 .btn-top{position:fixed;bottom:142px;right:16px;width:42px;height:42px;border-radius:50%;background:#0f172a;color:#fff;border:1px solid rgba(255,255,255,.2);font-size:18px;font-weight:700;cursor:pointer;z-index:999}
 footer{max-width:1200px;margin:30px auto 0;padding:18px 14px;text-align:center;font-size:12px;color:var(--muted);border-top:1px solid var(--border)}.pin-btn{margin-top:10px;background:transparent;border:1px solid #cbd5e1;color:#64748b;padding:5px 12px;border-radius:8px;font-size:11px;cursor:pointer}
-.grid.cols-2-force{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.grid.cols-2-force .card{padding:8px}.grid.cols-2-force .img-wrap{height:125px!important}#waTip{position:fixed;bottom:88px;right:76px;z-index:999;background:#0f172a;color:#fff;padding:6px 11px;border-radius:999px;font-size:12px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,.2);pointer-events:none;opacity:0;transition:opacity .2s}button[onclick="waConsulta()"]:hover+#waTip,#waTip.show{opacity:1}.card{overflow:hidden!important}.card .price-box{display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:space-between!important;gap:6px!important;width:100%!important}.card .price-box .price{white-space:nowrap!important;flex:1 1 100%!important;margin-bottom:2px!important}.card .price-box>div:last-child{display:flex!important;flex-wrap:nowrap!important;gap:6px!important;width:100%!important;justify-content:flex-start!important}.card .price-box button{flex:0 1 auto!important;width:auto!important;margin-left:0!important;padding:5px 8px!important;font-size:10.5px!important;white-space:normal!important;line-height:1.15!important;text-align:center!important;overflow:visible!important}</style><style>button[title^='Comparar'],button[title^='Compartir']{display:none!important}#perfumeGrid.grid-cols-1 .perfume-card{display:flex;align-items:center;gap:10px}</style></head><body><header><img src="logo.webp" alt="Aroma Parfums by Distribuidora MACR" style="width:165px;height:165px;border-radius:50%;object-fit:cover;margin:0 auto 12px;display:block;border:3px solid #f59e0b;box-shadow:0 8px 22px rgba(0,0,0,0.5);"/><h1>Aroma Parfums by Distribuidora MACR</h1><div class="subtitle">TIENDA ONLINE • Perfumería Original Importada • Envíos a Domicilio y a toda Honduras</div><div class="header-actions"><div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px;margin-top:6px;"><span class="badge-tipo" id="catalogLabel">Catálogo General Detalle</span><a id="topWaLink" href="#" target="_blank" class="btn-wa-top">💬 Consultar perfume</a><button onclick="openPinModal()" class="btn-wa-top" id="btnRoleSwitch">🔑 Acceso Socios</button><button id="btnGenLinkAdmin" onclick="abrirGenLink()" style="flex-wrap:wrap;justify-content:center;display:inline-block;background:#2563eb;color:#fff;border:none;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;">🔗 Generar Link</button><button id="btnTableroRed" onclick="abrirTableroRed()" style="display:none;background:#0f766e;color:#fff;border:none;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;margin-left:6px;">📊 Tablero Red</button><button id="btnAdminCentro" onclick="abrirCentroAdmin()" style="display:none;background:#0f172a;color:#f8fafc;border:1px solid #d4af37;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;margin:3px;">💼 Administración</button><button id="btnSyncAdmin" onclick="abrirModalSync()" style="display:none;background:#4f46e5;color:#fff;border:none;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;margin:3px;">🔄 Sincronizar</button></div><button id="btnVistaCliente" onclick="volverVistaCliente()" style="display:none;background:#4b5563;color:#fff;border:none;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;margin-left:6px;">👁️ Vista Cliente</button></div><div style="max-width:950px;margin:14px auto 0;padding-top:10px;border-top:1px solid rgba(255,255,255,0.14);font-size:11px;letter-spacing:0.6px;color:#e2e8f0;line-height:1.6;">
+.grid.cols-2-force{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.grid.cols-2-force .card{padding:8px}.grid.cols-2-force .img-wrap{height:125px!important}#waTip{position:fixed;bottom:88px;right:76px;z-index:999;background:#0f172a;color:#fff;padding:6px 11px;border-radius:999px;font-size:12px;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,.2);pointer-events:none;opacity:0;transition:opacity .2s}button[onclick="waConsulta()"]:hover+#waTip,#waTip.show{opacity:1}.card{overflow:hidden!important}.card .price-box{display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:space-between!important;gap:6px!important;width:100%!important}.card .price-box .price{white-space:nowrap!important;flex:1 1 100%!important;margin-bottom:2px!important}.card .price-box>div:last-child{display:flex!important;flex-wrap:nowrap!important;gap:6px!important;width:100%!important;justify-content:flex-start!important}.card .price-box button{flex:0 1 auto!important;width:auto!important;margin-left:0!important;padding:5px 8px!important;font-size:10.5px!important;white-space:normal!important;line-height:1.15!important;text-align:center!important;overflow:visible!important}</style><style>button[title^='Comparar'],button[title^='Compartir']{display:none!important}#perfumeGrid.grid-cols-1 .perfume-card{display:flex;align-items:center;gap:10px}</style></head><body><header><img src="logo.webp" alt="Aroma Parfums by Distribuidora MACR" style="width:165px;height:165px;border-radius:50%;object-fit:cover;margin:0 auto 12px;display:block;border:3px solid #f59e0b;box-shadow:0 8px 22px rgba(0,0,0,0.5);"/><h1>Aroma Parfums by Distribuidora MACR</h1><div class="subtitle">TIENDA ONLINE • Perfumería Original Importada • Envíos a Domicilio y a toda Honduras</div><div class="header-actions"><div style="display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:6px;margin-top:6px;"><span class="badge-tipo" id="catalogLabel">Catálogo General Detalle</span><a id="topWaLink" href="#" target="_blank" class="btn-wa-top">💬 Consultar perfume</a><button onclick="openPinModal()" class="btn-wa-top" id="btnRoleSwitch">🔑 Acceso Socios</button><button id="btnGenLinkAdmin" onclick="abrirGenLink()" style="flex-wrap:wrap;justify-content:center;display:inline-block;background:#2563eb;color:#fff;border:none;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;">🔗 Generar Link</button><button id="btnTableroRed" onclick="abrirTableroRed()" style="display:none;background:#0f766e;color:#fff;border:none;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;margin-left:6px;">📊 Tablero Red</button><button id="btnAdminCentro" onclick="abrirCentroAdmin()" style="display:none;background:#0f172a;color:#f8fafc;border:1px solid #d4af37;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;margin:3px;">💼 Administración</button><button id="btnSyncAdmin" onclick="abrirSyncAdmin()" style="display:none;background:#4f46e5;color:#fff;border:none;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;margin:3px;">🔄 Sincronizar</button></div><button id="btnVistaCliente" onclick="volverVistaCliente()" style="display:none;background:#4b5563;color:#fff;border:none;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;margin-left:6px;">👁️ Vista Cliente</button></div><div style="max-width:950px;margin:14px auto 0;padding-top:10px;border-top:1px solid rgba(255,255,255,0.14);font-size:11px;letter-spacing:0.6px;color:#e2e8f0;line-height:1.6;">
   <span style="color:#fbbf24;font-weight:700;">Perfumería Nicho-Diseñador-Árabe *MARCAS* :</span> Creed • Parfums de Marly • Mancera • Xerjoff • Tom Ford • Carolina Herrera • Dior • Chanel • Paco Rabanne • Gucci • Prada • Jean Paul Gaultier • Versace • YSL • Lattafa • Armaf • Afnan • Al Haramain • Bharara y más...</div></header>
 <div class="policy-wrap"><div id="polDetalle"  style='background:linear-gradient(135deg,#0f172a 0%,#1e293b 100%);border:1px solid rgba(212,175,55,.45);border-radius:14px;padding:14px 16px;box-shadow:0 8px 20px rgba(15,23,42,.18);text-align:center;'><div style='display:flex;flex-wrap:wrap;gap:8px;justify-content:center;'><button type='button' data-t='gdp_det' onclick="var x=document.getElementById(this.dataset.t);var v=x.style.display==='block';document.querySelectorAll('.info-drop-det').forEach(function(e){e.style.display='none'});if(!v)x.style.display='block';" style='background:#1e293b;color:#f8fafc;border:1px solid #d4af37;padding:8px 14px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,.25);'>🛡️ Garantía, Disponibilidad y Pago</button><button type='button' data-t='env_det' onclick="var x=document.getElementById(this.dataset.t);var v=x.style.display==='block';document.querySelectorAll('.info-drop-det').forEach(function(e){e.style.display='none'});if(!v)x.style.display='block';" style='background:#1e293b;color:#f8fafc;border:1px solid #d4af37;padding:8px 14px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,.25);'>🚚 Envíos (Local y Nacional)</button><button type='button' onclick="abrirLegal('envios')" style='background:#1e293b;color:#f8fafc;border:1px solid #d4af37;padding:8px 14px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,.25);color:#d4af37;'>📜 Obligatorio: Ver Políticas de Pago, Envío y Garantía antes de adquirir</button></div><div id='gdp_det' class='info-drop-det' style='display:none;margin-top:12px;background:#020617;color:#f1f5f9;border:1px solid rgba(212,175,55,.55);border-radius:12px;padding:14px 16px;text-align:left;font-size:12.5px;line-height:1.55;box-shadow:0 10px 25px rgba(0,0,0,.35);'><button type='button' onclick="this.parentElement.style.display='none'" style='float:right;background:transparent;border:1px solid rgba(212,175,55,.6);color:#d4af37;border-radius:999px;width:24px;height:24px;line-height:20px;text-align:center;font-size:13px;font-weight:800;cursor:pointer;margin-left:8px;'>✕</button><div style='color:#d4af37;font-weight:800;margin-bottom:4px;'>🛡️ GARANTÍA, DISPONIBILIDAD Y PAGO</div>Perfumes <strong>100% originales, nuevos y sellados</strong> de fábrica. Precios sujetos a cambio sin previo aviso; confirma existencia y precio final por WhatsApp antes de pagar.<br><strong>Única forma de pago:</strong> Transferencia o Depósito.</div><div id='env_det' class='info-drop-det' style='display:none;margin-top:12px;background:#020617;color:#f1f5f9;border:1px solid rgba(212,175,55,.55);border-radius:12px;padding:14px 16px;text-align:left;font-size:12.5px;line-height:1.55;box-shadow:0 10px 25px rgba(0,0,0,.35);'><button type='button' onclick="this.parentElement.style.display='none'" style='float:right;background:transparent;border:1px solid rgba(212,175,55,.6);color:#d4af37;border-radius:999px;width:24px;height:24px;line-height:20px;text-align:center;font-size:13px;font-weight:800;cursor:pointer;margin-left:8px;'>✕</button><div style='color:#d4af37;font-weight:800;margin-bottom:6px;'>🚚 CONDICIONES DE ENVÍO</div><div style='margin-bottom:6px;'><strong style='color:#4ade80;'>📍 Local (Tegucigalpa y Comayagüela):</strong> <strong>GRATIS.</strong> Dentro del casco urbano cubrimos hasta <strong>L. 95</strong> (no aplica en zonas de riesgo; y sectores fuera del casco urbano, con costo adicional). El costo adicional puede ser cancelado en efectivo al delivery o transferencia en el total de la venta, esto según acuerdo previo con el vendedor.</div><div><strong style='color:#60a5fa;'>🚚 Nacional:</strong> <strong>L 125.</strong> Envío estándar en agencia (Recargos por zona extendida, fuera de cobertura normal o por peso corren por cuenta del comprador). Si existe recargo será notificado antes para aprobación, una vez aprobado y coordinado con el vendedor, este le aparecerá en su comprobante de compra en el valor total.</div></div><div style='font-size:11px;font-style:italic;color:#cbd5e1;margin-top:10px;'>Agradecemos su paciencia y comprensión en cada etapa de su pedido, pago y entrega; cada uno de nuestros procesos tiene como único propósito brindarles siempre un servicio seguro y de excelencia.</div><div style='font-weight:700;font-size:11.5px;color:#d4af37;margin-top:4px;'>¡Gracias por preferir y confiar en Aroma Parfums, estamos para servirle!</div></div></div>
 <div id="polSocio" class="hidden" style="max-width:980px;margin:0 auto;">
@@ -533,4 +533,201 @@ window.mostrarListaSyncAuto=function(data){var lista=Array.isArray(data)?data:(d
 <script>
 function abrirLegal(k){var e=document.getElementById('aroma-data');if(!e)return;var D=JSON.parse(e.textContent);if(!D||!D.docs[k])return;document.getElementById('aroma-mt').textContent=D.docs[k].t;document.getElementById('aroma-mc').innerHTML=D.docs[k].c;document.getElementById('aroma-mod').style.display='block';}function cerrarLegal(){document.getElementById('aroma-mod').style.display='none';}(function(){var e=document.getElementById('aroma-data');var c=document.getElementById('aroma-redes');if(!e||!c)return;var D=JSON.parse(e.textContent);D.redes.forEach(function(r){var a=document.createElement('a');a.href=r.u;a.target='_blank';a.rel='noopener noreferrer';a.textContent=r.n;c.appendChild(a);});})();
 </script>
-<script>document.addEventListener('click',function(e){if(!e.target.closest('[id^="pol"],[data-t]')){document.querySelectorAll('[class^="info-drop-"]').forEach(function(b){b.style.display='none';});}});</script></body></html>
+<script>document.addEventListener('click',function(e){if(!e.target.closest('[id^="pol"],[data-t]')){document.querySelectorAll('[class^="info-drop-"]').forEach(function(b){b.style.display='none';});}});</script><script>
+window._syncData={fecha:'',cambios:[]};
+window._syncTab='SUBIO';
+window._syncSel={};
+
+window.abrirSyncAdmin=function(){
+  var m=document.getElementById('modalSyncAdmin');
+  if(!m)return;
+  m.style.display='flex';
+  var tk=localStorage.getItem('gh_token_aroma')||'';
+  var inp=document.getElementById('inpGhToken');
+  if(inp&&tk)inp.value=tk;
+  window.cargarBuzonSync();
+};
+
+window.cerrarModalSync=function(){
+  var m=document.getElementById('modalSyncAdmin');
+  if(m)m.style.display='none';
+};
+
+window.guardarTokenGh=function(){
+  var inp=document.getElementById('inpGhToken');
+  if(!inp)return;
+  var v=(inp.value||'').trim();
+  if(!v){alert('Pega tu token GitHub primero.');return;}
+  localStorage.setItem('gh_token_aroma',v);
+  alert('Token GitHub guardado en este navegador.');
+};
+
+window.cargarBuzonSync=function(){
+  var box=document.getElementById('listaCambiosSync');
+  if(box)box.innerHTML='<div style="padding:14px;color:#475569;">Cargando buzon...</div>';
+  fetch('pendientes.json?t='+Date.now())
+    .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
+    .then(function(d){
+      window._syncData={
+        fecha:(d&&d.fecha)||'',
+        cambios:Array.isArray(d&&d.cambios)?d.cambios:[]
+      };
+      window._syncSel={};
+      var lbl=document.getElementById('lblFechaSync');
+      if(lbl){
+        lbl.textContent=(window._syncData.fecha
+          ?'Ultima lectura: '+window._syncData.fecha.slice(0,16).replace('T',' ')
+          :'Lunes 6:00 AM o Manual')+' | En espera: '+window._syncData.cambios.length;
+      }
+      window.renderSyncAdmin();
+    })
+    .catch(function(){
+      if(box)box.innerHTML='<div style="padding:14px;color:#b91c1c;">Error leyendo pendientes.json</div>';
+    });
+};
+
+window.cambiarTabSync=function(tab){
+  window._syncTab=tab;
+  ['SUBIO','BAJO','NUEVO','DISP'].forEach(function(k){
+    var b=document.getElementById('tabSy'+k);
+    if(!b)return;
+    var act=(k===tab);
+    b.style.borderBottom=act?'3px solid #1e1b4b':'3px solid transparent';
+    b.style.background=act?'#f8fafc':'#fff';
+  });
+  window.renderSyncAdmin();
+};
+
+window._filtrarTabSync=function(tab){
+  return window._syncData.cambios.filter(function(c){
+    var tp=String(c.tipo||'');
+    if(tab==='BAJO')return tp==='BAJO'||tp==='OFERTA';
+    return tp===tab;
+  });
+};
+
+window._actualizarContadoresSync=function(){
+  ['SUBIO','BAJO','NUEVO','DISP'].forEach(function(k){
+    var el=document.getElementById('cSy'+k);
+    if(el)el.textContent=String(window._filtrarTabSync(k).length);
+  });
+  var n=Object.keys(window._syncSel).filter(function(id){return window._syncSel[id];}).length;
+  var dEl=document.getElementById('cntDesSync');
+  var sEl=document.getElementById('cntSelSync');
+  if(dEl)dEl.textContent=String(n);
+  if(sEl)sEl.textContent=String(n);
+};
+
+window.toggleItemSync=function(el){
+  if(!el)return;
+  var id=el.getAttribute('data-sid')||'';
+  if(!id)return;
+  if(el.checked)window._syncSel[id]=true;
+  else delete window._syncSel[id];
+  window._actualizarContadoresSync();
+};
+
+window.marcarTodosTabSync=function(forzar){
+  var lista=window._filtrarTabSync(window._syncTab);
+  var todos=lista.length>0&&lista.every(function(c){return !!window._syncSel[String(c.id)];});
+  var marcar=(forzar===true&&!todos);
+  lista.forEach(function(c){
+    var id=String(c.id);
+    if(marcar)window._syncSel[id]=true;
+    else delete window._syncSel[id];
+  });
+  window.renderSyncAdmin();
+};
+
+window.renderSyncAdmin=function(){
+  window._actualizarContadoresSync();
+  var box=document.getElementById('listaCambiosSync');
+  if(!box)return;
+  var lista=window._filtrarTabSync(window._syncTab);
+  if(!lista.length){
+    box.innerHTML='<div style="padding:18px;text-align:center;color:#64748b;">'
+      +'Sin cambios pendientes en esta pestana (0 en cuarentena).</div>';
+    return;
+  }
+  var html='';
+  lista.forEach(function(c){
+    var id=String(c.id||'').replace(/"/g,'&quot;');
+    var chk=window._syncSel[String(c.id||'')]?'checked':'';
+    var tp=String(c.tipo||'');
+    var det='';
+    if(tp==='DISP'){
+      det=(c.a_nuevo===1?'Agotado en proveedor':'Disponible de nuevo');
+    }else if(tp==='NUEVO'){
+      det='Nuevo | Linea: '+(c.l||'')+' | Sugerido: L '+(c.p_sug||0)+' | Socio: L '+(c.s_sug||0);
+    }else{
+      det='Antes: L '+(c.p_ant||0)+' -> Nuevo: L '+(c.p_sug||0)+' (Socio: L '+(c.s_sug||0)+')';
+    }
+    html+='<label style="display:flex;align-items:flex-start;gap:8px;padding:9px;'
+      +'border:1px solid #e2e8f0;border-radius:10px;margin-bottom:6px;background:#fff;cursor:pointer;">'
+      +'<input type="checkbox" '+chk+' data-sid="'+id+'" onchange="toggleItemSync(this)" '
+      +'style="margin-top:3px;">'
+      +'<div style="flex:1;"><div style="font-weight:700;color:#0f172a;">'
+      +'['+tp+'] '+(c.n||'')+' <span style="color:#64748b;font-weight:600;">('+(c.c||'')+')</span></div>'
+      +'<div style="font-size:11px;color:#475569;margin-top:2px;">'+det+'</div></div></label>';
+  });
+  box.innerHTML=html;
+};
+
+window.dispararRobotGh=function(accion){
+  var tk=(localStorage.getItem('gh_token_aroma')||'').trim();
+  if(!tk){alert('Pega y guarda primero tu token GitHub.');return;}
+  var box=document.getElementById('listaCambiosSync');
+  if(box)box.innerHTML='<div style="padding:16px;color:#0369a1;font-weight:700;">'
+    +'Ejecutando robot en GitHub ('+accion+')... espera 25-40 segundos.</div>';
+  fetch('https://github.com',{
+    method:'POST',
+    headers:{
+      'Authorization':'Bearer '+tk,
+      'Accept':'application/vnd.github+json',
+      'Content-Type':'application/json'
+    },
+    body:JSON.stringify({ref:'main',inputs:{accion:accion}})
+  }).then(function(r){
+    if(r.status===204){
+      setTimeout(function(){window.cargarBuzonSync();},28000);
+      setTimeout(function(){window.cargarBuzonSync();},45000);
+    }else{
+      alert('Error GitHub HTTP '+r.status+'. Verifica permisos workflow del token.');
+    }
+  }).catch(function(e){alert('Error red: '+e.message);});
+};
+
+window.enviarAccionSyncGh=function(accion){
+  var ids=Object.keys(window._syncSel).filter(function(id){return window._syncSel[id];});
+  if(!ids.length){alert('Marca al menos un perfume primero.');return;}
+  var tk=(localStorage.getItem('gh_token_aroma')||'').trim();
+  if(!tk){alert('Pega y guarda primero tu token GitHub.');return;}
+  var msg=(accion==='aplicar')
+    ?'Publicar '+ids.length+' cambios aprobados en la tienda?'
+    :'Descartar '+ids.length+' cambios seleccionados sin publicar?';
+  if(!confirm(msg))return;
+  var payload={accion:accion,ids:ids,precios:{}};
+  var apiUrl='https://github.com';
+  fetch(apiUrl+'?t='+Date.now(),{
+    headers:{'Authorization':'Bearer '+tk,'Accept':'application/vnd.github+json'}
+  }).then(function(r){return r.ok?r.json():null;})
+    .then(function(meta){
+      var b64=btoa(unescape(encodeURIComponent(JSON.stringify(payload,null,2))));
+      var body={message:'Aprobar '+accion+' ('+ids.length+')',content:b64,branch:'main'};
+      if(meta&&meta.sha)body.sha=meta.sha;
+      return fetch(apiUrl,{
+        method:'PUT',
+        headers:{
+          'Authorization':'Bearer '+tk,
+          'Accept':'application/vnd.github+json',
+          'Content-Type':'application/json'
+        },
+        body:JSON.stringify(body)
+      });
+    }).then(function(r){
+      if(!r.ok)throw new Error('HTTP '+r.status);
+      window.dispararRobotGh(accion);
+    }).catch(function(e){alert('Error subiendo aprobados.json: '+e.message);});
+};
+</script>
+</body></html>
