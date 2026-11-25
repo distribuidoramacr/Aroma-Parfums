@@ -680,7 +680,7 @@ window.dispararRobotGh=function(accion){
   var box=document.getElementById('listaCambiosSync');
   if(box)box.innerHTML='<div style="padding:16px;color:#0369a1;font-weight:700;">'
     +'Ejecutando robot en GitHub ('+accion+')... espera 25-40 segundos.</div>';
-  fetch('https://github.com',{
+  fetch('https://://github.com/repos/distribuidoramacr/Aroma-Parfums/actions/workflows/sincronizar.yml/dispatches',{
     method:'POST',
     headers:{
       'Authorization':'Bearer '+tk,
@@ -708,7 +708,7 @@ window.enviarAccionSyncGh=function(accion){
     :'Descartar '+ids.length+' cambios seleccionados sin publicar?';
   if(!confirm(msg))return;
   var payload={accion:accion,ids:ids,precios:{}};
-  var apiUrl='https://github.com';
+  var apiUrl='https://://github.com/repos/distribuidoramacr/Aroma-Parfums/contents/aprobados.json';
   fetch(apiUrl+'?t='+Date.now(),{
     headers:{'Authorization':'Bearer '+tk,'Accept':'application/vnd.github+json'}
   }).then(function(r){return r.ok?r.json():null;})
