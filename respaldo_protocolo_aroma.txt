@@ -83,7 +83,7 @@ REPO: https://github.comAroma-Parfums | WEB: https://github.io
 [HECHO] Tarjetas de catalogo (.price-box): precio en 1 linea (L 1,345) y botones compactos 'Al carrito' + 'Consultar / stock' en 2 lineas sin cortarse.
 
 --- 2. PENDIENTES POR HACER (PROXIMOS PASOS) ---
-[PENDIENTE 1] Afinar filtro de genero en Asesor Olfativo (15s) para que (M)=Mujer y (H)=Hombre no se crucen al buscar.
+[HECHO] Filtro de genero en Asesor Olfativo (15s) afinado: (M)/WOMAN=Mujer, (H)/MAN=Hombre, (U)=Unisex.
 [PENDIENTE 2] Modulo 2: Semaforo de Socios & Mayoristas (control de accesos activos/vencidos).
 [PENDIENTE 3] Modulo 3: Administracion & Sincronizacion automatica con GitHub Pages.
 [PENDIENTE 4] Modulo 4: Modo Costo, Consultar Perfume y revision final de filtros en movil.
