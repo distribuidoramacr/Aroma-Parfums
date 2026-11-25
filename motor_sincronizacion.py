@@ -81,7 +81,7 @@ def main():
      it.update({'k':kf,'p':pf,'s':sf,'m':mf,'sv':sv_v,'o':1 if sv_v<0 else 0,'w':0})
      if sv_v<0:it.update({'d':abs(sv_v),'ds':max(0,int(c.get('s_ant',sf))-sf),'dm':max(0,int(c.get('m_ant',mf))-mf),'df':abs(int(c.get('diff',0)))})
   open('datos.js','w',encoding='utf-8').write(a+'='+json.dumps(items,ensure_ascii=False,separators=(',',':'))+';\n')
-  pend.update({'cambios':list(c for c in pend.get('cambios',list()) if str(c.get('id','')) not in sids)})
+  pend.update({'cambios':list(c for c in pend.get('cambios',list()) if (str(c.get('id') or '').strip() or ('NAM_'+norm(c.get('n','')))) not in sids)})
   json.dump(pend,open('pendientes.json','w',encoding='utf-8'),ensure_ascii=False,indent=2)
   return
  vivo=dict()
