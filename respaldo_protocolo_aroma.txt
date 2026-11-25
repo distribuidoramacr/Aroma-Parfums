@@ -40,3 +40,4 @@ SIGUIENTE: Continuar modulo pendiente.
 24. CIERRES CORTOS Y GESTION DE PENDIENTES: Usar ancla corta unica + find('</div>', pos)+6 y sincronizar pendientes.json en GitHub.
 25. ANCLAS DE TEXTO VISIBLE SIN CSS: Prohibido incluir style='...' en anclas; buscar texto visible y retroceder con rfind('<div', 0, pos).
 26. PROHIBIDO EMOJIS EN ANCLAS: Buscar siempre palabras limpias sin emojis para evitar fallos por caracteres ocultos.
+27. CONTADOR [TURNO X/8] Y REFRESH OBLIGATORIO: Numerar cada respuesta como [Turno X/8] y ejecutar refrescamiento completo del protocolo y estado en cada turno 8.
