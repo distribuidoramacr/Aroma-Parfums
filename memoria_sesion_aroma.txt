@@ -1,0 +1,15 @@
+=== MEMORIA INTEGRAL AROMA PARFUMS ===
+FECHA: 2026-11-24 | ESTADO: ACTIVO
+1. REGLAS PROTOCOLO: 1 a 44 activas y respaldadas en respaldo_protocolo_aroma.txt.
+2. LOGROS COMPLETADOS EN ESTA SESION:
+   - 3 bandas oscuras centradas (max-width:980px) en polDetalle, polSocio y polMayorista.
+   - Textos legales oficiales (GRATIS, comprobante de compra, antes de adquirir, sin estrellitas).
+   - Programa de Socio Comercial y Modalidades de Entrega integrados en boton oscuro desplegable.
+   - Boton X dorado en los 7 recuadros y cierre automatico al hacer clic afuera.
+   - Modal Asesor Olfativo actualizado a 2 columnas (Para quien es, Ocasion, Linea preferida, Familia Olfativa y Presupuesto maximo).
+3. EN CURSO AHORA:
+   - Conectar aplicarAsesorOlfativo() con el catalogo maestro real y reset al abrir.
+4. AGENDA PENDIENTE:
+   - Modulo 2: Semaforo de Socios y Mayoristas.
+   - Modulo 3: Administracion y GitHub Pages.
+   - Modulo 4: Modo Costo y filtros en movil.
