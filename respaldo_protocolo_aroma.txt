@@ -65,3 +65,4 @@ SIGUIENTE: Continuar modulo pendiente.
 [HECHO] Boton X dorado y cierre al clic afuera en 7 paneles.
 [PENDIENTE] Verificar en Chrome clave S12 y cierre con X.
 43. CONTEO DE TURNOS Y REFRESH AUTOMATICO EN 8: Cada par (mensaje usuario + respuesta modelo) cuenta como 1 turno [Turno X/8]. Al llegar al Turno 8/8, enviar automaticamente la celda Python de Refresh del Protocolo sin que el usuario lo pida.
+44. PROHIBIDO find('};') EN JS Y NODE --CHECK OBLIGATORIO: Nunca cerrar una funcion JS con find('};'); usar siempre ancla de la siguiente funcion o llaves balanceadas, y validar el script con node --check antes de guardar o descargar.
