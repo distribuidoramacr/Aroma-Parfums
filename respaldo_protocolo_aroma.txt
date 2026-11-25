@@ -61,11 +61,10 @@
 55. AL FINALIZAR Y VERIFICAR EN VIVO CADA MODULO, DESCARGAR AUTOMATICAMENTE index.html LIMPIO A DOWNLOADS Y SUBIR RESPALDO ACTUALIZADO CON git push origin main.
 
 === PUNTO EXACTO DE CONTINUIDAD ===
-FECHA_HONDURAS: 2026-11-25 14:29 CST | TURNO: 6/8
+FECHA_HONDURAS: 2026-11-25 14:33 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
 REGLAS ACTIVAS: 1 A 55 | REPO: distribuidoramacr/Aroma-Parfums
 WEB: https://github.io
-COMPLETADO_Y_VERIFICADO_EN_VIVO:
-- Sincronizador Manual y Cuarentena Selectiva (modalSyncAdmin) verificado en PC y Movil (commit 87d9ccb).
-- Boton manual Escanear La Fe + pestanas Subio/Bajo/Nuevos/Stock + checkboxes + Descartar/Aplicar operativos.
-- Regla 55 incorporada y index.html limpio descargado a Downloads.
-SIGUIENTE_PASO_1 (Turno 7/8): Continuar con Modulo 2 (Semaforo de Socios & Mayoristas) segun protocolo.
+ESTADO_VERIFICADO:
+- Modulo Sincronizador Manual y Cuarentena Selectiva (modalSyncAdmin) 100% operativo y probado en PC y Movil.
+- Auditoria previa Modulo 2 (Semaforo de Socios & Mayoristas) realizada sin cambios: listaSemaforoRed=1, abrirSemaforo=0, p_det=2, soc=36, may=41.
+SIGUIENTE_PASO_1 (Turno 1/8): Lectura previa del bloque alrededor de listaSemaforoRed en index.html (0 cambios) antes de cualquier ajuste en Modulo 2.
