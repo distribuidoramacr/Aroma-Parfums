@@ -1,89 +1,65 @@
-=== PROTOCOLO MAESTRO AROMA PARFUMS (12 REGLAS) ===
+=== PROTOCOLO MAESTRO AROMA PARFUMS (REGLAS 1-46) ===
 1. Un solo bloque de codigo limpio por mensaje.
 2. Avanzar estrictamente un solo modulo y un solo boton a la vez.
-3. Esperar siempre fotografia de confirmacion antes de pasar al siguiente paso.
-4. Auditoria de sintaxis (node --check = 0 errores) + Simulacion Real obligatoria antes de descargar.
-5. Estricto control de variables locales y globales (prueba logica previa antes de desplegar).
-6. Nunca dejar dos funciones con el mismo nombre y simular siempre el clic real del boton HTML.
-7. Inspeccionar siempre las primeras ocurrencias en todo el archivo (POS: 0 en adelante), no solo al final.
-8. Usar siempre la URL publica real https://github.io (nunca rutas locales).
-9. No escribir Base64 manualmente; usar archivos o funciones limpias verificadas.
+3. Esperar siempre fotografia de confirmacion antes de seguir.
+4. Auditoria de sintaxis (node --check = 0 errores) + Simulacion.
+5. Control de variables locales y globales antes de usar.
+6. Nunca dejar dos funciones con el mismo nombre.
+7. Inspeccionar primeras ocurrencias en todo el archivo.
+8. Usar siempre URL publica https://github.io
+9. No escribir Base64 manualmente; usar funciones limpias.
 10. Mantener bloques cortos, claros y modulares.
-11. Ejecutar siempre desplegar_quirurgico() de protocolo.py para cada cambio.
-12. Corte quirurgico estricto: reemplazar solo desde 'function nombre(' hasta la siguiente 'function ', sin cortar el resto del <script>.
+11. Ejecutar siempre desplegar_quirurgico() para cada cambio.
+12. Corte quirurgico estricto desde funcion hasta siguiente.
+15. ANCLAS SIN SALTOS PROHIBIDOS: texto literal visible.
+16. CODIGO M: Lectura real previa + auditoria + validacion.
+17. PROHIBIDO OFFSETS IMPRECISOS: subcadenas cortas 8-15 chars.
+18. TEXTWRAP 70 OBLIGATORIO en toda lectura de codigo.
+19. ASSERTS SEPARADOS Y COUNT REAL antes de exigir count()==1.
+20. VALIDAR SCRIPTS VS JSON (json.loads vs node --check).
+21. BITACORA DE CONTINUIDAD: fecha, commit, tarea y siguiente.
+22. PUSH AUTOMATICO OBLIGATORIO con git push origin main.
+23. RESPALDO AUTOMATICO DE SESION en respaldo_protocolo_aroma.txt
+24. CIERRES CORTOS Y GESTION DE SCRIPTS (mismo count <script).
+25. ANCLAS DE TEXTO VISIBLE SIN CSS (prohibido style=...).
+26. PROHIBIDO EMOJIS EN ANCLAS.
+27. CONTADOR DE TURNOS Y REFRESH OBLIGATORIO en cada turno 8/8.
+28. LIMITE DE CORTE Y PRESERVACION DE SCRIPTS.
+29. CIERRE DE DIV POR BALANCEO EXACTO (<div vs </div>).
+30. ASSERT OBLIGATORIO DE INDICE 1 (s_pos != -1).
+31. ASSERT OBLIGATORIO DE INDICE 2 (e_pos != -1).
+32. VERIFICAR ESTADO EN DISCO TRAS FALLO.
+33. PROHIBIDO ADIVINAR NIVELES DE rfind('<div').
+34. ID UNICO POR PANEL (p_det/soc/may).
+35. CERO SUPOSICIONES SIN VERIFICACION.
+36. LECTURA, ANALISIS, AUDITORIA Y PRUEBA PREVIA OBLIGATORIA.
+37. CURSOR MOVIL EN REEMPLAZOS ITERATIVOS.
+38. CONTEO EXACTO DE IDENTIFICADORES EN AUDITORIA.
+39. LIMITE DE LONGITUD DINAMICO EN AUDITORIA.
+40. RESTAURACION INTEGRAL DE IDs HERMANOS.
+41. VALIDACION DE CONTEO LOCALIZADO EN AUDITORIA.
+42. CONTEO RELATIVO AL ESTADO BASE EN AUDITORIA.
+43. CONTEO DE TURNOS Y REFRESH AUTOMATICO EN 8/8.
+44. PROHIBIDO find('}') EN JS Y NODE --CHECK OBLIGATORIO.
+45. AUDITORIA DE ELEMENTOS EXISTENTES ANTES DE INSERTAR.
+46. PROHIBIDO ASUMIR ATRIBUTOS DE BOTON SIN LEER; usar window.location.assign en iOS/Android.
 
-=== ESTADO DEL PROYECTO AROMA PARFUMS ===
-[OK] Motor Guardian: protocolo.py + protocolo.txt (12 reglas activas)
-[OK] Modulo 1: Generar Link (Temporal Socio 12h, Temporal Mayorista 12h, Directo Socio S12, Directo Mayorista M03 + Envio WhatsApp +504)
-[PENDIENTE] Modulo 2: Semaforo de Socios & Mayoristas (control de accesos activos/vencidos)
-[PENDIENTE] Modulo 3: Administracion & Sincronizar con GitHub Pages
-[PENDIENTE] Modulo 4: Modo Costo, Consultar Perfume y filtros en movil
-15. ANCLAS SIN SALTOS: Prohibido cruzar punto y coma (;) o saltos de linea en anclas; usar siempre subcadenas cortas de 8-15 caracteres localizadas con h.find(sub, p_fn).
-17. PROHIBIDO OFFSETS NUMERICOS: Buscar siempre por texto literal visible (h.find('Sin tel')), nunca p+500.
-18. TEXTWRAP 70 OBLIGATORIO: Toda lectura de codigo debe imprimirse con textwrap.fill(repr(...), 70) para que quepa en pantalla vertical sin girar el celular.
-16. CODIGO M: Lectura real previa obligatoria + anclas cortas <=18 chars por indice h.find() + auditoria caracter por caracter (cierres, mayusculas y signos sin prisa) + validacion en Chrome antes de avanzar.
-19. ASSERTS SEPARADOS Y COUNT REAL: Prohibido exigir count()==1 sin verificar antes; localizar primera ocurrencia (Regla 6) y actualizar /content/index.html y /content/Aroma-Parfums/index.html.
-20. VALIDAR SCRIPT VS JSON: En auditoria JS, validar <script type='application/json'> con json.loads() y solo los <script> ejecutables con node --check.
-21. BITACORA DE CONTINUIDAD: Guardar aqui fecha, ultimo commit, tarea hecha y siguiente paso.
-22. PUSH AUTOMATICO OBLIGATORIO: Todo cambio auditado se sube de inmediato a GitHub con git push.
+=== ESTADO Y MEMORIA INTEGRAL AROMA PARFUMS ===
+FECHA: 2026-11-25 00:20 CST | REPO: distribuidoramacr/Aroma-Parfums
+WEB: https://github.io
 
-=== ULTIMA SESION (2026-11-25 00:54) ===
-ULTIMOS COMMITS:
-9960b63 Politica de Envio Recoleccion y Pagos completa
-cdeef47 FAQ con espaciado puntitos dorados y cierre centrado
-420dfe5 FAQ completo con originalidad y mayoristas
-fb4ba59 Mision y Vision exactas de documento oficial
-0c5d34d Terminos del Servicio 20 secciones completas
-HECHO: Aviso GARANTIA Y DISPONIBILIDAD actualizado y auditado en index.html.
-SIGUIENTE: Continuar modulo pendiente.
-23. RESPALDO AUTOMATICO DE SESION: En cada cambio, guardar bitacora detallada (que se toco, por que y siguiente paso exacto) en respaldo_protocolo_aroma.txt dentro de /content/Aroma-Parfums y subirlo a GitHub.
-24. CIERRES CORTOS Y GESTION DE PENDIENTES: Usar ancla corta unica + find('</div>', pos)+6 y sincronizar pendientes.json en GitHub.
-25. ANCLAS DE TEXTO VISIBLE SIN CSS: Prohibido incluir style='...' en anclas; buscar texto visible y retroceder con rfind('<div', 0, pos).
-26. PROHIBIDO EMOJIS EN ANCLAS: Buscar siempre palabras limpias sin emojis para evitar fallos por caracteres ocultos.
-27. CONTADOR [TURNO X/8] Y REFRESH OBLIGATORIO: Numerar cada respuesta como [Turno X/8] y ejecutar refrescamiento completo del protocolo y estado en cada turno 8.
-28. LIMITE DE CORTE Y PRESERVACION DE SCRIPTS: Exigir siempre 0 < (e_pos - s_pos) < 3500 y verificar que h2.count('<script') == h.count('<script') antes de escribir en disco.
-29. CIERRE DE DIV POR BALANCEO EXACTO: Prohibido buscar '</div></div>' a ciegas; usar siempre conteo balanceado de <div vs </div> y prohibir '<script' dentro del rango cortado.
-30. ASSERT OBLIGATORIO DE INDICE != -1: Prohibido usar s_pos en slices h2[:s_pos] sin ejecutar assert s_pos != -1 antes.
-30. ASSERT OBLIGATORIO DE INDICE != -1: Prohibido usar s_pos en slices h2[:s_pos] sin ejecutar assert s_pos != -1 antes.
-31. VERIFICAR ESTADO EN DISCO TRAS FALLO: Si un bloque previo fallo antes de write(), asumir el estado original del archivo.
-32. PROHIBIDO ADIVINAR NIVELES DE rfind('<div'): Usar exactamente los 2 niveles verificados (d1 y s_pos) y validar rango < 3000.
-33. ID UNICO POR PANEL: Asignar id='gdp_det/soc/may' a cada bloque nuevo para editarlo directamente por ID en el futuro.
-34. CERO SUPOSICIONES SIN VERIFICACION: Validar ausencia de <script y existencia de los 3 IDs antes de escribir en disco.
-36. LECTURA, ANALISIS, AUDITORIA Y PRUEBA PREVIA OBLIGATORIA: Prohibido enviar o escribir cambios sin antes leer el bloque real en consola, analizar indices, auditar y probar en memoria.
-37. CURSOR MOVIL EN REEMPLAZOS ITERATIVOS: Al reemplazar multiples bloques en un bucle, avanzar siempre el cursor despues del bloque insertado para no re-procesar el mismo fragmento.
-38. CONTEO EXACTO DE IDENTIFICADORES EN AUDITORIA: Antes de definir un assert .count(x) == n, verificar cuantas veces aparece x entre atributos data-t e id en la plantilla HTML.
-39. LIMITE DE LONGITUD DINAMICO EN AUDITORIA: Antes de fijar un umbral numerico en un assert de longitud, calcular el tamano real del bloque mas extenso y asignar un margen holgado (< 6500).
-40. RESTAURACION INTEGRAL DE IDS HERMANOS: Cuando una funcion JS alterna visibilidad entre varios id en secuencia (polDetalle, polSocio, polMayorista), verificar y restaurar todos los id hermanos antes de ejecutar los assert.
-41. VALIDACION DE CONTEO LOCALIZADO EN AUDITORIA: No usar assert h2.count(estilo) == 0 global sin verificar si otro modulo usa ese color; validar dentro del contenedor especifico (polSocio).
-42. CONTEO RELATIVO AL ESTADO BASE EN AUDITORIA: Al insertar N elementos nuevos (ej. botones X), nunca asumir que h.count(x) era 0; validar siempre h2.count(x) == h.count(x) + N.
-
-=== BITACORA DE AVANCE Y PENDIENTES ===
-[HECHO] 3 bandas oscuras con borde dorado (det, soc, may).
-[HECHO] Textos corregidos (GRATIS, comprobante de compra, antes de adquirir, sin estrellitas).
-[HECHO] IDs polDetalle, polSocio y polMayorista activos.
-[HECHO] Programa de Socio Comercial en boton desplegable.
-[HECHO] Boton X dorado y cierre al clic afuera en 7 paneles.
-[PENDIENTE] Verificar en Chrome clave S12 y cierre con X.
-43. CONTEO DE TURNOS Y REFRESH AUTOMATICO EN 8: Cada par (mensaje usuario + respuesta modelo) cuenta como 1 turno [Turno X/8]. Al llegar al Turno 8/8, enviar automaticamente la celda Python de Refresh del Protocolo sin que el usuario lo pida.
-44. PROHIBIDO find('};') EN JS Y NODE --CHECK OBLIGATORIO: Nunca cerrar una funcion JS con find('};'); usar siempre ancla de la siguiente funcion o llaves balanceadas, y validar el script con node --check antes de guardar o descargar.
-
-=== MEMORIA INTEGRAL Y ESTADO AROMA PARFUMS ===
-ACTUALIZADO: 2026-11-24 23:58 CST | REGLAS: 1 a 46
-REPO: https://github.comAroma-Parfums | WEB: https://github.io
-
---- 1. LOGROS COMPLETADOS AL 100% ---
-[HECHO] Motor Guardian: protocolo.py + respaldo_protocolo_aroma.txt (Reglas 1 a 46).
+--- COMPLETADOS AL 100% ---
+[HECHO] Motor Guardian: protocolo.py + respaldo_protocolo_aroma.txt (Reglas 1-46).
 [HECHO] 3 bandas oscuras centradas (max-width:980px) en polDetalle, polSocio y polMayorista.
-[HECHO] Textos legales oficiales (GRATIS, comprobante de compra, antes de adquirir, sin estrellitas).
-[HECHO] Programa de Socio Comercial y Modalidades de Entrega integrados en boton oscuro desplegable.
+[HECHO] Textos legales oficiales (GRATIS, comprobante de compra, antes de adquirir).
+[HECHO] Programa de Socio Comercial y Modalidades de Entrega en boton oscuro desplegable.
 [HECHO] Boton X dorado en los 7 recuadros y cierre automatico al hacer clic afuera.
-[HECHO] Asesor Olfativo (15s) en cuadricula de 2 columnas conectado al arreglo real items.
-[HECHO] Modulo 1 Generar Link: Temporal Socio 12h, Temporal Mayorista 12h, Directo Socio 512, Directo Mayorista 803 + Envio WhatsApp +504.
-[HECHO] Globo WhatsApp flotante (2.2s sin quedarse pegado) y apertura al 1er toque en iPhone iOS y Android con window.location.assign.
-[HECHO] Tarjetas de catalogo (.price-box): precio en 1 linea (L 1,345) y botones compactos 'Al carrito' + 'Consultar / stock' en 2 lineas sin cortarse.
+[HECHO] Asesor Olfativo (15s) en 2 columnas conectado a items con filtro afinado: (M)=Mujer, (H)=Hombre, (U)=Unisex.
+[HECHO] Modulo 1 Generar Link: Temporal Socio/Mayorista 12h, Directo Socio 512, Directo Mayorista 803 + Envio WhatsApp +504.
+[HECHO] Globo WhatsApp temporal 2.2s + apertura al 1er toque en iPhone iOS y Android (window.location.assign).
+[HECHO] Tarjetas (.price-box): precio en 1 linea y botones compactos 'Al carrito' + 'Consultar / stock' en 2 lineas.
 
---- 2. PENDIENTES POR HACER (PROXIMOS PASOS) ---
-[HECHO] Filtro de genero en Asesor Olfativo (15s) afinado: (M)/WOMAN=Mujer, (H)/MAN=Hombre, (U)=Unisex.
-[PENDIENTE 2] Modulo 2: Semaforo de Socios & Mayoristas (control de accesos activos/vencidos).
-[PENDIENTE 3] Modulo 3: Administracion & Sincronizacion automatica con GitHub Pages.
-[PENDIENTE 4] Modulo 4: Modo Costo, Consultar Perfume y revision final de filtros en movil.
+--- PENDIENTES POR HACER (PROXIMA SESION) ---
+[PENDIENTE 1] Modulo 2: Semaforo de Socios & Mayoristas (control de accesos activos y vencidos).
+[PENDIENTE 2] Modulo 3: Administracion & Sincronizacion automatica con GitHub Pages.
+[PENDIENTE 3] Modulo 4: Modo Costo, Consultar Perfume y revision final de filtros en movil.
