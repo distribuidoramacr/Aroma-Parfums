@@ -53,3 +53,5 @@ SIGUIENTE: Continuar modulo pendiente.
 37. CURSOR MOVIL EN REEMPLAZOS ITERATIVOS: Al reemplazar multiples bloques en un bucle, avanzar siempre el cursor despues del bloque insertado para no re-procesar el mismo fragmento.
 38. CONTEO EXACTO DE IDENTIFICADORES EN AUDITORIA: Antes de definir un assert .count(x) == n, verificar cuantas veces aparece x entre atributos data-t e id en la plantilla HTML.
 39. LIMITE DE LONGITUD DINAMICO EN AUDITORIA: Antes de fijar un umbral numerico en un assert de longitud, calcular el tamano real del bloque mas extenso y asignar un margen holgado (< 6500).
+40. RESTAURACION INTEGRAL DE IDS HERMANOS: Cuando una funcion JS alterna visibilidad entre varios id en secuencia (polDetalle, polSocio, polMayorista), verificar y restaurar todos los id hermanos antes de ejecutar los assert.
+41. VALIDACION DE CONTEO LOCALIZADO EN AUDITORIA: No usar assert h2.count(estilo) == 0 global sin verificar si otro modulo usa ese color; validar dentro del contenedor especifico (polSocio).
