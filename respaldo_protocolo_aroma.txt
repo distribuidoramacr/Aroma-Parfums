@@ -61,18 +61,15 @@
 55. AL FINALIZAR Y VERIFICAR EN VIVO CADA MODULO, DESCARGAR AUTOMATICAMENTE index.html LIMPIO A DOWNLOADS Y SUBIR RESPALDO ACTUALIZADO CON git push origin main.
 
 === PUNTO EXACTO DE CONTINUIDAD ===
-FECHA_HONDURAS: 2026-11-25 14:43 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
+FECHA_HONDURAS: 2026-11-25 15:06 CST | TURNO: 6/8
 REGLAS ACTIVAS: 1 A 55 | REPO: distribuidoramacr/Aroma-Parfums
 WEB: https://github.io
 
-TAREA_1_INMEDIATA (Turno 1/8 - Terminar Sincronizador Manual):
-- Modal modalSyncAdmin ya abre en PC y Movil y guarda token en localStorage ('gh_token_aroma').
-- Al pulsar 'Escanear La Fe' devolvio 'Error red: Failed to fetch'.
-- Paso exacto Turno 1/8: auditar llamadas previas a ://github.com en index.html y formato de GITHUB_TOKEN en Secrets (0 cambios) para corregir headers/CORS de dispararRobotGh y dejar 'Escanear La Fe' operativo en PC y Movil.
+MODULO_1_COMPLETADO_Y_VERIFICADO_EN_VIVO:
+- Sincronizador Manual y Cuarentena Selectiva (modalSyncAdmin) 100% operativo y probado en vivo (Escanear La Fe -> 0 en cuarentena).
+- index.html limpio descargado a Downloads y respaldado en GitHub (Regla 55).
 
-TAREA_2_SIGUIENTE (Modulo 2 - Control de Red y Semaforo, hallazgos ya leidos):
-- Ubicacion HTML en index.html: pos=151000 a 152936 (antes de modalSyncAdmin).
-- Encabezado: 'Control de Red y Semaforo | Clasificacion automatica en tiempo real', cierre onclick="cerrarTableroRed()".
-- Bloqueo manual: input id="inpBloquearManual" + boton onclick="accionBloqueoRed('bloquear',document.getElementById('inpBloquearManual').value)".
-- Pestanas y contadores: tabRedVerde (cntVerde), tabRedAmarillo (cntAmarillo), tabRedRojo (cntRojo), onclick="cambiarTabRed(...)".
-- Contenedor lista: id="listaSemaforoRed" (count=1). Funciones JS cambiarTabRed / accionBloqueoRed aun pendientes de definir/conectar tras cerrar Tarea 1.
+MODULO_2_SIGUIENTE (Control de Red y Semaforo - Socios & Mayoristas):
+- Ubicacion HTML en index.html: pos=151000 a 152936.
+- IDs ya auditados: inpBloquearManual, accionBloqueoRed, tabRedVerde (cntVerde), tabRedAmarillo (cntAmarillo), tabRedRojo (cntRojo), cambiarTabRed, listaSemaforoRed, cerrarTableroRed().
+- Pendiente Turno 7/8 (solo lectura previa): localizar boton Admin que abre el modal del Semaforo y verificar fuente de datos de Socios/Mayoristas antes de implementar su logica JS.
