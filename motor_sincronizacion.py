@@ -112,7 +112,7 @@ def main():
   if int(it.get('a',0))!=int(lv.get('a',0)):cmb.append({'id':iid,'tipo':'DISP','n':it.get('n',''),'c':it.get('c',''),'l':lin,'i':it.get('i',''),'a_nuevo':int(lv.get('a',0)),'detalle':'Agotado en La Fe' if lv.get('a')==1 else 'Disponible de nuevo'})
   if ka>0 and kn>0:
    df=kn-ka
-   if not(ka==1 and kn==0) and abs(df)/float(ka)>0.40:continue
+   if int(it.get('a',0))==0 and abs(df)/float(ka)>0.40:continue
    if df>=20:
     ps,ss,ms=calc(kn,lin,it.get('c',''),lv.get('p_lafe',0))
     cmb.append({'id':iid,'tipo':'SUBIO','n':it.get('n',''),'c':it.get('c',''),'l':lin,'i':it.get('i',''),'k_ant':ka,'k_nuevo':kn,'diff':df,'p_ant':it.get('p',0),'p_sug':ps,'s_sug':ss,'m_sug':ms})

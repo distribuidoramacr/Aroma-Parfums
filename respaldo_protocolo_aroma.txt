@@ -57,7 +57,7 @@
 51. BLINDAJE DE CONTINUIDAD EN VIVO: Cada ejecucion sobrescribe
 
 === PUNTO EXACTO DE CONTINUIDAD ===
-FECHA_HONDURAS: 2026-11-25 11:09 CST | TURNO: 3/8
+FECHA_HONDURAS: 2026-11-25 11:12 CST | TURNO: 5/8
 REGLAS ACTIVAS: 1 A 53 | REPO: distribuidoramacr/Aroma-Parfums
-ESTADO_EXACTO: Sincronizacion 100% cerrada (42 cambios con fallback sin nota DUPE aplicados en datos.js).
-SIGUIENTE_PASO_UNICO: Verificar 9AM DIVE 150ML en web y pasar a Modulo 2 (Semaforo de Socios & Mayoristas).
+ESTADO_EXACTO: Regreso de stock >40% corregido en motor_sincronizacion.py y aplicado en datos.js.
+SIGUIENTE_PASO_UNICO: Confirmar 9AM DIVE 150ML a:0 y pasar a Modulo 2 (Semaforo de Socios & Mayoristas).
