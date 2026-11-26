@@ -79,10 +79,8 @@
 63. PROHIBIDO USAR check=True EN git commit; CONFIGURAR SIEMPRE git user.email/user.name Y VALIDAR git status --porcelain ANTES.
 
 === PUNTO EXACTO DE CONTINUIDAD ===
-FECHA_HONDURAS: 2026-11-25 22:45 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
-REGLAS ACTIVAS: 1 A 62 | REPO: distribuidoramacr/Aroma-Parfums
-MODULO_ACTUAL: Modulo 1 - Sincronizador Manual + Cuarentena Selectiva (Regla 60: Prohibido avanzar hasta cerrar y verificar en vivo este modulo).
-ESTADO:
-- Reglas 61 y 62 grabadas fisicamente en respaldo_protocolo_aroma.txt.
-- motor_sincronizacion.py escanear ejecutado en Colab en Turno 7/8 sin errores; conteo exacto de pendientes.json impreso en Turno 8/8.
-SIGUIENTE_PASO_1 (Turno 1/8): Verificar por que tiendalafe.com devolvio 0 cambios nuevos o si bloquea User-Agent desde GitHub/Colab (revisando len(vivo) en lineas 121-fin leidas en Turno 8/8) y subir pendientes.json actualizado para cerrar en vivo el Modulo 1 antes de pasar a Modulo 2.
+FECHA_HONDURAS: 2026-11-26 00:41 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
+REGLAS ACTIVAS: 1 A 63 | REPO: distribuidoramacr/Aroma-Parfums
+MODULOS COMPLETADOS Y VERIFICADOS EN VIVO (CHECK):
+- [OK] Modulo 1: Sincronizador Manual + Cuarentena Selectiva (Escanear La Fe, Aplicar selectivo 1 item sin borrar pendientes, envio automatico de bajas a Ofertas con etiqueta -L 100).
+SIGUIENTE_PASO_1 (Turno 1/8): Iniciar auditoria de solo lectura (Regla 54) del Modulo 2 (Control de Red y Semaforo: cambiarTabRed / accionBloqueoRed) antes de aplicar cambios.
