@@ -70,10 +70,14 @@
 
 60. PROHIBIDO AVANZAR AL SIGUIENTE MODULO SIN HABER CERRADO Y VERIFICADO EN VIVO EL MODULO ACTUAL.
 
+61. ANTES DE CUALQUIER git commit EN COLAB, EJECUTAR SIEMPRE git config user.email Y user.name PARA EVITAR CalledProcessError.
+
 === PUNTO EXACTO DE CONTINUIDAD ===
-FECHA_HONDURAS: 2026-11-25 17:35 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
-REGLAS ACTIVAS: 1 A 59 | REPO: distribuidoramacr/Aroma-Parfums
+FECHA_HONDURAS: 2026-11-25 22:26 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
+REGLAS ACTIVAS: 1 A 60 | REPO: distribuidoramacr/Aroma-Parfums
+MODULO_ACTUAL: Modulo 1 - Sincronizador Manual + Cuarentena Selectiva (Regla 60: Prohibido avanzar hasta cerrar y verificar en vivo este modulo).
 ESTADO:
-- index.html intacto (0 cambios no validados).
-- motor_sincronizacion.py blindado con NAM_ en lineas 63, 84 y 114 (commit 3956dc6).
-SIGUIENTE_PASO_1 (Turno 1/8): Con la salida repr() leida en Turno 8/8 de window.dispararRobotGh, agregar aviso de error GitHub validado con node --check = 0 errores y probar Escanear La Fe en vivo (Regla 56) antes de Modulo 2 (Semaforo).
+- motor_sincronizacion.py blindado con IDs unicos NAM_ en lineas 63, 84 y 114 (commit 3956dc6) + regla automatica 'd': abs(sv_v) para enviar bajas de precio directo a Ofertas.
+- MUGLER ANGEL ELIXIR EDP 100ML (M) verificado en datos.js (aun en p:3865, d:0 porque el Apply previo ocurrio antes de blindar linea 84).
+- actualizarContadoresSync leido en Turno 8/8 para corregir el render al hacer clic en Nuevos (9).
+SIGUIENTE_PASO_1 (Turno 1/8): Corregir render al cambiar pestana en window.cambiarTabSync/actualizarContadoresSync (validado con node --check = 0 errores) y ejecutar prueba real en vivo (Escanear La Fe + Aplicar 1 item) antes de Modulo 2.
