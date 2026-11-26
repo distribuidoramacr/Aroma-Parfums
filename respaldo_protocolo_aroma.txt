@@ -72,12 +72,15 @@
 
 61. ANTES DE CUALQUIER git commit EN COLAB, EJECUTAR SIEMPRE git config user.email Y user.name PARA EVITAR CalledProcessError.
 
+61. ANTES DE CUALQUIER git commit EN COLAB, EJECUTAR git config user.email Y user.name.
+
+62. PROHIBIDO TRANSCRIBIR CADENAS DESDE CAPTURAS SIN VERIFICARLAS CON repr() (REGLA 54/59).
+
 === PUNTO EXACTO DE CONTINUIDAD ===
-FECHA_HONDURAS: 2026-11-25 22:26 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
-REGLAS ACTIVAS: 1 A 60 | REPO: distribuidoramacr/Aroma-Parfums
+FECHA_HONDURAS: 2026-11-25 22:45 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
+REGLAS ACTIVAS: 1 A 62 | REPO: distribuidoramacr/Aroma-Parfums
 MODULO_ACTUAL: Modulo 1 - Sincronizador Manual + Cuarentena Selectiva (Regla 60: Prohibido avanzar hasta cerrar y verificar en vivo este modulo).
 ESTADO:
-- motor_sincronizacion.py blindado con IDs unicos NAM_ en lineas 63, 84 y 114 (commit 3956dc6) + regla automatica 'd': abs(sv_v) para enviar bajas de precio directo a Ofertas.
-- MUGLER ANGEL ELIXIR EDP 100ML (M) verificado en datos.js (aun en p:3865, d:0 porque el Apply previo ocurrio antes de blindar linea 84).
-- actualizarContadoresSync leido en Turno 8/8 para corregir el render al hacer clic en Nuevos (9).
-SIGUIENTE_PASO_1 (Turno 1/8): Corregir render al cambiar pestana en window.cambiarTabSync/actualizarContadoresSync (validado con node --check = 0 errores) y ejecutar prueba real en vivo (Escanear La Fe + Aplicar 1 item) antes de Modulo 2.
+- Reglas 61 y 62 grabadas fisicamente en respaldo_protocolo_aroma.txt.
+- motor_sincronizacion.py escanear ejecutado en Colab en Turno 7/8 sin errores; conteo exacto de pendientes.json impreso en Turno 8/8.
+SIGUIENTE_PASO_1 (Turno 1/8): Verificar por que tiendalafe.com devolvio 0 cambios nuevos o si bloquea User-Agent desde GitHub/Colab (revisando len(vivo) en lineas 121-fin leidas en Turno 8/8) y subir pendientes.json actualizado para cerrar en vivo el Modulo 1 antes de pasar a Modulo 2.
