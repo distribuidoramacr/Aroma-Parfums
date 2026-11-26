@@ -78,9 +78,11 @@
 
 63. PROHIBIDO USAR check=True EN git commit; CONFIGURAR SIEMPRE git user.email/user.name Y VALIDAR git status --porcelain ANTES.
 
+64. PROHIBIDO USAR INDICES CON CORCHETES DE CERO EN BLOQUES PARA COPIAR (SE PIERDEN EN MARKDOWN); USAR SIEMPRE .partition().
+
 === PUNTO EXACTO DE CONTINUIDAD ===
-FECHA_HONDURAS: 2026-11-26 00:41 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
-REGLAS ACTIVAS: 1 A 63 | REPO: distribuidoramacr/Aroma-Parfums
+FECHA_HONDURAS: 2026-11-26 00:58 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
+REGLAS ACTIVAS: 1 A 64 | REPO: distribuidoramacr/Aroma-Parfums
 MODULOS COMPLETADOS Y VERIFICADOS EN VIVO (CHECK):
-- [OK] Modulo 1: Sincronizador Manual + Cuarentena Selectiva (Escanear La Fe, Aplicar selectivo 1 item sin borrar pendientes, envio automatico de bajas a Ofertas con etiqueta -L 100).
-SIGUIENTE_PASO_1 (Turno 1/8): Iniciar auditoria de solo lectura (Regla 54) del Modulo 2 (Control de Red y Semaforo: cambiarTabRed / accionBloqueoRed) antes de aplicar cambios.
+- [OK] Modulo 1: Sincronizador Manual + Cuarentena Selectiva + diferencia visual de costo (+L subio / -L bajo) en Comparar Sync (commit 475fd68, NODE_CHECK: 0 ERRORES).
+SIGUIENTE_PASO_1 (Turno 1/8): Verificar visualmente (+L subio / -L bajo) en Comparar Sync y arrancar auditoria de solo lectura (Regla 54) del Modulo 2 (Control de Red y Semaforo: cambiarTabRed / accionBloqueoRed).
