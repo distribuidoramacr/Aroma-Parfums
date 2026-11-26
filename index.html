@@ -702,16 +702,16 @@ window.renderSyncAdmin=function(){
     var act=window._buscarActualTienda(c);
     var cid=id.replace(/[^a-zA-Z0-9_-]/g,'_')+'_'+Math.random().toString(36).slice(2,6);
     var miTxt=act
-      ?('Costo K: L '+(act.k||0)+'<br>Detalle D: L '+(act.p||0)+'<br>Socio S: L '+(act.s||0)
-        +'<br>Mayor M: L '+(act.m||0)+'<br>Estado: '+(act.a===1?'Agotado':'Disponible'))
+      ?('Costo: L '+(act.k||0)+'<br>Detalle: L '+(act.p||0)+'<br>Socio: L '+(act.s||0)
+        +'<br>Mayor: L '+(act.m||0)+'<br>Estado: '+(act.a===1?'Agotado':'Disponible'))
       :'Producto nuevo<br>(Aun no existe en Mi Tienda)';
     var nvK=(c.k_nuevo!=null?c.k_nuevo:(act?act.k:0));
     var nvD=(c.p_sug!=null?c.p_sug:(act?act.p:0));
     var nvS=(c.s_sug!=null?c.s_sug:(act?act.s:0));
     var nvM=(c.m_sug!=null?c.m_sug:(act?act.m:0));
     var nvA=(tp==='DISP'?(c.a_nuevo===1?'Agotado':'Disponible'):(act&&act.a===1?'Agotado':'Disponible'));
-    var dk=(act?(Number(nvK||0)-Number(act.k||0)):0);var dkStr=(dk>0?' (+'+dk+')':(dk<0?' ('+dk+')':''));var nvTxt='Costo K: L '+nvK+dkStr+'<br>Detalle D: L '+nvD+'<br>Socio S: L '+nvS
-      +'<br>Mayor M: L '+nvM+'<br>Estado: '+nvA;
+    var dk=(act?(Number(nvK||0)-Number(act.k||0)):0);var dkStr=(dk>0?' (+'+dk+')':(dk<0?' ('+dk+')':''));var nvTxt='Costo: L '+nvK+dkStr+'<br>Detalle: L '+nvD+'<br>Socio: L '+nvS
+      +'<br>Mayor: L '+nvM+'<br>Estado: '+nvA;
     html+='<div style="padding:9px;border:1px solid #e2e8f0;border-radius:10px;margin-bottom:6px;background:#fff;">'
       +'<div style="display:flex;align-items:flex-start;gap:8px;">'
       +'<input type="checkbox" '+chk+' data-sid="'+id+'" onchange="toggleItemSync(this)" style="margin-top:3px;cursor:pointer;">'+(c.i||(act&&act.i)?'<img src="'+(c.i||(act&&act.i))+'" onclick="window.verZoomSync(this.src)" title="Clic para ampliar" style="width:38px;height:38px;cursor:zoom-in;object-fit:contain;border-radius:6px;border:1px solid #e2e8f0;background:#fff;flex-shrink:0;" onerror="this.style.display=\'none\'">':'')
