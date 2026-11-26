@@ -709,7 +709,7 @@ window.renderSyncAdmin=function(){
     var nvS=(c.s_sug!=null?c.s_sug:(act?act.s:0));
     var nvM=(c.m_sug!=null?c.m_sug:(act?act.m:0));
     var nvA=(tp==='DISP'?(c.a_nuevo===1?'Agotado':'Disponible'):(act&&act.a===1?'Agotado':'Disponible'));
-    var nvTxt='Costo K: L '+nvK+'<br>Detalle D: L '+nvD+'<br>Socio S: L '+nvS
+    var dk=(act?(Number(nvK||0)-Number(act.k||0)):0);var dkTag=(dk>0?' <b style="color:#b91c1c;">(+L '+dk+' subio)<' + s + 'b>':(dk<0?' <b style="color:#15803d;">(-L '+Math.abs(dk)+' bajo)<' + s + 'b>':''));var nvTxt='Costo K: L '+nvK+dkTag+'<br>Detalle D: L '+nvD+'<br>Socio S: L '+nvS
       +'<br>Mayor M: L '+nvM+'<br>Estado: '+nvA;
     html+='<div style="padding:9px;border:1px solid #e2e8f0;border-radius:10px;margin-bottom:6px;background:#fff;">'
       +'<div style="display:flex;align-items:flex-start;gap:8px;">'
