@@ -83,8 +83,23 @@
 65. CADA MODIFICACION O RESTAURACION DE index.html DEBE EJECUTAR SIEMPRE files.download('index.html') PARA DEJARLO ACTUALIZADO EN LA PC.
 
 === PUNTO EXACTO DE CONTINUIDAD ===
-FECHA_HONDURAS: 2026-11-26 01:36 CST | TURNO: 5/8 (CIERRE POR DESCANSO)
-REGLAS ACTIVAS: 1 A 65 | REPO: distribuidoramacr/Aroma-Parfums
+FECHA_HONDURAS: 2026-11-26 01:49 CST | ESTADO: CIERRE NOCTURNO VERIFICADO EN VIVO
+REPO: distribuidoramacr/Aroma-Parfums | BRANCH: main
+
+REGLAS OPERATIVAS DE INGENIERIA ACTIVAS:
+- Regla 14/18/20/24: Ejecutar siempre 1 solo bloque atomico por turno en Colab; verificar conteo exacto de etiquetas <script> antes y despues; validar el 100% del JS extraido con node --check (0 errores) antes de escribir index.html o hacer git push.
+- Regla 40: Usar texto ASCII limpio en etiquetas internas/commits y wrappers p() de 88 columnas en salidas de Colab.
+- Regla 54: Todo modulo nuevo inicia con auditoria de solo lectura (sin modificar archivos hasta confirmar estructura real).
+- Regla 57/58/59/63/64: Mantener sincronizado respaldo_protocolo_aroma.txt en main con el punto exacto de continuidad.
+- Regla 65: Descargar automaticamente a Downloads mediante google.colab.files.download tanto index.html actualizado como respaldo_protocolo_aroma_REFRESH.txt en cada cierre o cambio relevante.
+
 MODULOS COMPLETADOS Y VERIFICADOS EN VIVO (CHECK):
-- [OK] Modulo 1: Sincronizador Manual + Cuarentena Selectiva + diferencia (+L/-L) + foto 84x84px centrada arriba con zoom al hacer clic y textos de precios en ancho completo debajo (NODE_CHECK: 0 ERRORES).
-SIGUIENTE_PASO_1 (Turno 1/8): Verificar visualmente en celular/PC con cache limpia el layout vertical de Comparar y arrancar auditoria de solo lectura (Regla 54) del Modulo 2 (Control de Red y Semaforo: cambiarTabRed / accionBloqueoRed).
+- [OK] Modulo 1 (Sincronizador Manual + Cuarentena Selectiva):
+  * Comparacion lado a lado ("Mi Tienda" vs "Nuevo") con diferencia exacta de costo (+L / -L).
+  * Etiquetas limpias en una sola linea para celular y PC: Costo:, Detalle:, Socio:, Mayor:, Estado:.
+  * Miniatura 48x48px con onclick="window.verZoomSync(this.src)" que abre vista ampliada en pantalla completa al tocarla/hacer clic (NODE_CHECK: 0 ERRORES).
+
+PENDIENTES PARA LA PROXIMA SESION (EN ORDEN):
+1. [PENDIENTE - SIGUIENTE PASO] Modulo 2 (Control de Red y Semaforo): Iniciar auditoria de solo lectura (cambiarTabRed / accionBloqueoRed / vistas de Red, Socios, Mayoristas y Semaforo en index.html).
+2. [PENDIENTE] Modulo 3: Revision del flujo de pedidos/carrito y sincronizacion de stock/precios en vivo.
+3. [PENDIENTE] Modulo 4: Verificacion final integral de paneles administrativos en celular y PC.
