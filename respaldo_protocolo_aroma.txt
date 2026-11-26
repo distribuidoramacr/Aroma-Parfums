@@ -83,8 +83,8 @@
 65. CADA MODIFICACION O RESTAURACION DE index.html DEBE EJECUTAR SIEMPRE files.download('index.html') PARA DEJARLO ACTUALIZADO EN LA PC.
 
 === PUNTO EXACTO DE CONTINUIDAD ===
-FECHA_HONDURAS: 2026-11-26 01:23 CST | TURNO: 8/8 (REFRESH OBLIGATORIO)
+FECHA_HONDURAS: 2026-11-26 01:36 CST | TURNO: 5/8 (CIERRE POR DESCANSO)
 REGLAS ACTIVAS: 1 A 65 | REPO: distribuidoramacr/Aroma-Parfums
 MODULOS COMPLETADOS Y VERIFICADOS EN VIVO (CHECK):
-- [OK] Modulo 1: Sincronizador Manual + Cuarentena Selectiva + diferencia (+L/-L) + fotos 108x108px lado a lado con zoom al hacer clic (NODE_CHECK: 0 ERRORES).
-SIGUIENTE_PASO_1 (Turno 1/8): Confirmar zoom al hacer clic en vivo en Sincronizar y arrancar auditoria de solo lectura (Regla 54) del Modulo 2 (Control de Red y Semaforo: cambiarTabRed / accionBloqueoRed).
+- [OK] Modulo 1: Sincronizador Manual + Cuarentena Selectiva + diferencia (+L/-L) + foto 84x84px centrada arriba con zoom al hacer clic y textos de precios en ancho completo debajo (NODE_CHECK: 0 ERRORES).
+SIGUIENTE_PASO_1 (Turno 1/8): Verificar visualmente en celular/PC con cache limpia el layout vertical de Comparar y arrancar auditoria de solo lectura (Regla 54) del Modulo 2 (Control de Red y Semaforo: cambiarTabRed / accionBloqueoRed).
